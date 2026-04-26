@@ -865,10 +865,10 @@ function submitPremiumForm() {
 
     var message = "\uD83C\uDFE5 *APPOINTMENT REQUEST*\n";
     message +=
-      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n";
+      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\n";
     message += "\uD83D\uDC64 *PATIENT INFORMATION*\n";
     message +=
-      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
+      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
     message += "\u2022 Name: " + fullName + "\n";
     message += "\u2022 Phone: " + phone + "\n";
     message += "\u2022 Email: " + email + "\n";
@@ -876,18 +876,18 @@ function submitPremiumForm() {
     message += "\u2022 Gender: " + gender + "\n\n";
     message += "\uD83D\uDCC5 *APPOINTMENT DETAILS*\n";
     message +=
-      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
+      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
     message += "\u2022 Date: " + date + "\n";
     message += "\u2022 Time: " + time + "\n";
     message += "\u2022 Type: " + consultType + "\n";
     message += "\u2022 Concern: " + concern + "\n\n";
     message += "\uD83D\uDCDD *PROBLEM DESCRIPTION*\n";
     message +=
-      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
+      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
     message += description + "\n\n";
     message += "\u2695\uFE0F *MEDICAL HISTORY*\n";
     message +=
-      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
+      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
     message += "\u2022 Previous Surgery: " + prevSurgery + "\n";
     message += "\u2022 Current Medicines: " + medicines + "\n";
     if (medicines === "Yes") {
@@ -896,8 +896,8 @@ function submitPremiumForm() {
     // message += "\u2022 Reports Uploaded: " + fileUploaded + "\n\n";
     message += "\u2022 Reports: Share separately after connecting\n\n";
     message +=
-      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
-    message += "_Sent via " + CONFIG.doctorName + " Booking Portal_\n";
+      "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n";
+    message += "_Sent via " + CONFIG.doctorName + " Booking_\n";
     message += "_Website: " + CONFIG.website + "_";
 
     var encodedMessage = encodeURIComponent(message);

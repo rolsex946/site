@@ -306,6 +306,35 @@
   // ============================================================
   // SCROLL REVEAL
   // ============================================================
+  // let scrollRevealObserver = null;
+
+  // function initScrollReveal() {
+  //   if (scrollRevealObserver) {
+  //     scrollRevealObserver.disconnect();
+  //   }
+
+  //   const elements = document.querySelectorAll(".scroll-reveal:not(.revealed)");
+
+  //   scrollRevealObserver = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry, index) => {
+  //         if (entry.isIntersecting) {
+  //           setTimeout(() => {
+  //             entry.target.classList.add("revealed");
+  //           }, index * 80);
+  //           scrollRevealObserver.unobserve(entry.target);
+  //         }
+  //       });
+  //     },
+  //     {
+  //       threshold: CONFIG.SCROLL_REVEAL_THRESHOLD,
+  //       rootMargin: CONFIG.SCROLL_REVEAL_ROOT_MARGIN,
+  //     },
+  //   );
+
+  //   elements.forEach((el) => scrollRevealObserver.observe(el));
+  // }
+
   let scrollRevealObserver = null;
 
   function initScrollReveal() {
@@ -333,6 +362,21 @@
     );
 
     elements.forEach((el) => scrollRevealObserver.observe(el));
+
+    // ✅ Fallback: force-reveal elements already in viewport (fixes refresh invisible bug)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        elements.forEach((el) => {
+          if (el.classList.contains("revealed")) return;
+          const rect = el.getBoundingClientRect();
+          const inView = rect.top < window.innerHeight - 60 && rect.bottom > 0;
+          if (inView) {
+            el.classList.add("revealed");
+            scrollRevealObserver.unobserve(el);
+          }
+        });
+      });
+    });
   }
 
   // ============================================================
@@ -478,11 +522,33 @@
   function initAppointmentForm() {
     if (!DOM.appointmentForm) return;
 
-    // Set min date to today
+    // ✅ Set min (today) and max (2 months) + restrict to Mon/Wed/Fri
     const dateInput = document.getElementById("ap-preferred-date");
+    const ALLOWED_DAYS = [1, 3, 5]; // Monday=1, Wednesday=3, Friday=5
     if (dateInput) {
-      const today = new Date().toISOString().split("T")[0];
-      dateInput.setAttribute("min", today);
+      const today = new Date();
+      const todayStr = today.toISOString().split("T")[0];
+      const maxDate = new Date(today);
+      maxDate.setMonth(maxDate.getMonth() + 2);
+      const maxDateStr = maxDate.toISOString().split("T")[0];
+
+      dateInput.setAttribute("min", todayStr);
+      dateInput.setAttribute("max", maxDateStr);
+
+      // Validate on change — clear if wrong day
+      dateInput.addEventListener("change", function () {
+        if (!this.value) return;
+        const selected = new Date(this.value + "T00:00:00");
+        const day = selected.getDay();
+        if (!ALLOWED_DAYS.includes(day)) {
+          this.value = "";
+          const group = this.closest(".form-group");
+          if (group) group.classList.add("has-error");
+        } else {
+          const group = this.closest(".form-group");
+          if (group) group.classList.remove("has-error");
+        }
+      });
     }
 
     DOM.appointmentForm.addEventListener("submit", (e) => {
@@ -530,6 +596,15 @@
     if (field.type === "number" && field.value.trim()) {
       const val = parseInt(field.value);
       if (val < 1 || val > 120) isValid = false;
+    }
+
+    // ✅ Validate preferred date: must be Mon/Wed/Fri
+    if (field.id === "ap-preferred-date" && field.value.trim()) {
+      const ALLOWED_DAYS = [1, 3, 5]; // Monday=1, Wednesday=3, Friday=5
+      const selected = new Date(field.value + "T00:00:00");
+      if (!ALLOWED_DAYS.includes(selected.getDay())) {
+        isValid = false;
+      }
     }
 
     if (field.type === "checkbox") {

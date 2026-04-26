@@ -1728,3 +1728,8 @@ ol {
 .video-scroller.dark-scroller::-webkit-scrollbar-thumb {
   background: rgba(59, 130, 246, 0.4);
 }
+
+/* KOUSHIK EXTRA */
+.doctor-blur-card {
+  height: auto !important;
+}

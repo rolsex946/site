@@ -1614,7 +1614,7 @@ ol {
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 0px;
   border-radius: var(--radius-2xl);
   overflow: hidden;
   background: var(--slate-900);
@@ -1631,7 +1631,7 @@ ol {
 }
 
 .video-wrapper video {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;

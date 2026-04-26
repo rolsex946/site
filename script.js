@@ -8,15 +8,15 @@
 
 // ===================== CONFIGURATION =====================
 const CONFIG = {
-  whatsappNumber: "919876543210",
-  whatsappDisplay: "98765 43210",
+  whatsappNumber: "918847494362",
+  whatsappDisplay: "8847494362",
   doctorName: "Dr. Hakam Singh",
   doctorTitle: "Consultant Orthopaedic Surgeon & Sports Injury Specialist",
   clinicName: "[Clinic Name]",
   clinicAddress: "[Full Address]",
   clinicCity: "City, State, PIN",
-  clinicPhone: "+91 98765 43210",
-  clinicEmail: "dr.hakamsingh@example.com",
+  clinicPhone: "+91 8847494362",
+  clinicEmail: "hakamsingh9@gmail.com",
   instagram: "https://www.instagram.com/drhakamsingh/?hl=en",
   youtube: "https://www.youtube.com/@drhakamsinghortho",
   website: "https://drhakamsingh.com/",

@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Asmita Mondal | General Physician & Diabetologist</title>
+    <meta name="description"
+        content="Dr. Asmita Mondal - MBBS, CCEBDM (Diabetes). Expert General Physician & Diabetologist in Kolkata. Trusted care for Diabetes, Thyroid, Blood Pressure & more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-inner">
+            <div class="loading-logo">
+                <!-- <div class="loading-pulse"></div> -->
+                <div class="medical-icon loading-pulse"
+                    style="display:flex; justify-content:center; align-items: center; color: rgb(231, 231, 231);">
+                    <iconify-icon icon="mdi:medical-bag" width="35" height="35"></iconify-icon>
+                </div>
+                <span class="loading-text">Dr. Asmita Mondal</span>
+            </div>
+            <div class="loading-bar-track">
+                <div class="loading-bar-fill"></div>
+            </div>
+            <p class="loading-tagline">Healing with Compassion</p>
+        </div>
+    </div>
+
+    <!-- ========== PAGE TRANSITION OVERLAY ========== -->
+    <div id="page-transition" class="page-transition">
+        <div class="transition-slice"></div>
+        <div class="transition-slice"></div>
+        <div class="transition-slice"></div>
+        <div class="transition-slice"></div>
+        <div class="transition-slice"></div>
+    </div>
+
+    <!-- ========== CURSOR FOLLOWER ========== -->
+    <div id="cursor-follower" class="cursor-follower"></div>
+    <div id="cursor-dot" class="cursor-dot"></div>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header id="main-header" class="main-header">
+        <div class="header-inner">
+            <a href="#home" class="header-logo" data-nav="home">
+                <div class="logo-mark">
+                    <iconify-icon icon="lucide:stethoscope" width="24"></iconify-icon>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">Dr. Asmita Mondal</span>
+                    <span class="logo-sub">MBBS, CCEBDM</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-nav="home">Home</a>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#about" class="nav-link" data-nav="about">
+                            About
+                            <iconify-icon icon="lucide:chevron-down" width="14" class="nav-arrow"></iconify-icon>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#about" class="submenu-link" data-nav="about">Doctor Profile</a></li>
+                            <li><a href="#credentials" class="submenu-link" data-nav="credentials">Credentials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#services" class="nav-link" data-nav="services">
+                            Services
+                            <iconify-icon icon="lucide:chevron-down" width="14" class="nav-arrow"></iconify-icon>
+                        </a>
+                        <ul class="submenu submenu-wide">
+                            <li><a href="#services" class="submenu-link" data-nav="services">All Services</a></li>
+                            <li><a href="#diabetes" class="submenu-link" data-nav="diabetes">Diabetes Management</a>
+                            </li>
+                            <li><a href="#blood-pressure" class="submenu-link" data-nav="blood-pressure">Blood
+                                    Pressure</a></li>
+                            <li><a href="#thyroid" class="submenu-link" data-nav="thyroid">Thyroid Disorders</a></li>
+                            <li><a href="#respiratory" class="submenu-link" data-nav="respiratory">Respiratory Care</a>
+                            </li>
+                            <li><a href="#general-medicine" class="submenu-link" data-nav="general-medicine">General
+                                    Medicine</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#appointment" class="nav-link" data-nav="appointment">Appointment</a>
+                    </li>
+                    <li class="nav-item has-submenu">
+                        <a href="#health-tips" class="nav-link" data-nav="health-tips">
+                            Resources
+                            <iconify-icon icon="lucide:chevron-down" width="14" class="nav-arrow"></iconify-icon>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#health-tips" class="submenu-link" data-nav="health-tips">Health Tips</a></li>
+                            <li><a href="#faqs" class="submenu-link" data-nav="faqs">FAQs</a></li>
+                            <li><a href="#testimonials" class="submenu-link" data-nav="testimonials">Testimonials</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="tel:8961355152" class="header-phone">
+                    <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                    <span>8961355152</span>
+                </a>
+                <a href="#appointment" class="btn btn-primary btn-sm header-cta" data-nav="appointment">
+                    Book Now
+                </a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MOBILE NAVIGATION ========== -->
+    <div id="mobile-nav" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <span class="mobile-nav-title">Menu</span>
+            <button class="mobile-nav-close" id="mobile-nav-close">
+                <iconify-icon icon="lucide:x" width="24"></iconify-icon>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#home" class="mobile-nav-link" data-nav="home">Home</a></li>
+            <li class="mobile-has-submenu">
+                <a href="#about" class="mobile-nav-link" data-nav="about">
+                    About
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="mobile-arrow"></iconify-icon>
+                </a>
+                <ul class="mobile-submenu">
+                    <li><a href="#about" class="mobile-submenu-link" data-nav="about">Doctor Profile</a></li>
+                    <li><a href="#credentials" class="mobile-submenu-link" data-nav="credentials">Credentials</a></li>
+                </ul>
+            </li>
+            <li class="mobile-has-submenu">
+                <a href="#services" class="mobile-nav-link" data-nav="services">
+                    Services
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="mobile-arrow"></iconify-icon>
+                </a>
+                <ul class="mobile-submenu">
+                    <li><a href="#services" class="mobile-submenu-link" data-nav="services">All Services</a></li>
+                    <li><a href="#diabetes" class="mobile-submenu-link" data-nav="diabetes">Diabetes Management</a></li>
+                    <li><a href="#blood-pressure" class="mobile-submenu-link" data-nav="blood-pressure">Blood
+                            Pressure</a></li>
+                    <li><a href="#thyroid" class="mobile-submenu-link" data-nav="thyroid">Thyroid Disorders</a></li>
+                    <li><a href="#respiratory" class="mobile-submenu-link" data-nav="respiratory">Respiratory Care</a>
+                    </li>
+                    <li><a href="#general-medicine" class="mobile-submenu-link" data-nav="general-medicine">General
+                            Medicine</a></li>
+                </ul>
+            </li>
+            <li><a href="#appointment" class="mobile-nav-link" data-nav="appointment">Appointment</a></li>
+            <li class="mobile-has-submenu">
+                <a href="#health-tips" class="mobile-nav-link" data-nav="health-tips">
+                    Resources
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="mobile-arrow"></iconify-icon>
+                </a>
+                <ul class="mobile-submenu">
+                    <li><a href="#health-tips" class="mobile-submenu-link" data-nav="health-tips">Health Tips</a></li>
+                    <li><a href="#faqs" class="mobile-submenu-link" data-nav="faqs">FAQs</a></li>
+                    <li><a href="#testimonials" class="mobile-submenu-link" data-nav="testimonials">Testimonials</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#contact" class="mobile-nav-link" data-nav="contact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="tel:8961355152" class="mobile-nav-phone">
+                <iconify-icon icon="lucide:phone" width="18"></iconify-icon>
+                Call: 8961355152
+            </a>
+            <a href="#appointment" class="btn btn-primary btn-block" data-nav="appointment">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="main-content" class="main-content">
+
+        <!-- ===== PAGE: HOME ===== -->
+        <section id="page-home" class="page page-active" data-page="home">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-bg">
+                    <div class="hero-gradient"></div>
+                    <div class="hero-pattern"></div>
+                    <div class="hero-orb hero-orb-1"></div>
+                    <div class="hero-orb hero-orb-2"></div>
+                    <div class="hero-orb hero-orb-3"></div>
+                </div>
+                <div class="hero-content container">
+                    <div class="hero-grid">
+                        <div class="hero-text">
+                            <div class="hero-badge animate-in" data-delay="0">
+                                <iconify-icon icon="lucide:shield-check" width="14"></iconify-icon>
+                                WBMC Registered | Reg. No. 86487
+                            </div>
+                            <h1 class="hero-title animate-in" data-delay="100">
+                                <span class="hero-title-line">Compassionate</span>
+                                <span class="hero-title-line hero-title-accent">Healthcare</span>
+                                <span class="hero-title-line">You Can Trust</span>
+                            </h1>
+                            <p class="hero-desc animate-in" data-delay="200">
+                                Dr. Asmita Mondal brings expertise in General Medicine and Diabetology,
+                                offering personalized treatment plans with a patient-first approach.
+                                Harvard-certified in Respiratory Diseases.
+                            </p>
+                            <div class="hero-actions animate-in" data-delay="300">
+                                <a href="#appointment" class="btn btn-primary btn-lg" data-nav="appointment">
+                                    <iconify-icon icon="lucide:calendar-check" width="18"></iconify-icon>
+                                    Book Appointment
+                                </a>
+                                <a href="#about" class="btn btn-outline btn-lg" data-nav="about">
+                                    <iconify-icon icon="lucide:user" width="18"></iconify-icon>
+                                    Meet the Doctor
+                                </a>
+                            </div>
+                            <div class="hero-stats animate-in" data-delay="400">
+                                <div class="hero-stat">
+                                    <span class="hero-stat-number" data-count="1000">0</span>
+                                    <span class="hero-stat-plus">+</span>
+                                    <span class="hero-stat-label">Patients Treated</span>
+                                </div>
+                                <div class="hero-stat-divider"></div>
+                                <div class="hero-stat">
+                                    <span class="hero-stat-number" data-count="7">0</span>
+                                    <span class="hero-stat-plus">+</span>
+                                    <span class="hero-stat-label">Years Experience</span>
+                                </div>
+                                <div class="hero-stat-divider"></div>
+                                <div class="hero-stat">
+                                    <span class="hero-stat-number" data-count="98">0</span>
+                                    <span class="hero-stat-plus">%</span>
+                                    <span class="hero-stat-label">Patient Satisfaction</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-visual animate-in" data-delay="300">
+                            <div class="hero-image-wrapper">
+                                <div class="hero-image-frame">
+                                    <img src="https://i.ibb.co/S7Q6vMT6/asmita-Copy.png" alt="Dr. Asmita Mondal"
+                                        class="hero-image">
+                                </div>
+                                <div class="hero-image-accent"></div>
+                                <div class="hero-floating-card hero-floating-card-1">
+                                    <iconify-icon icon="lucide:award" width="20"></iconify-icon>
+                                    <div>
+                                        <span class="floating-card-title">Harvard Certified</span>
+                                        <span class="floating-card-sub">Respiratory Diseases</span>
+                                    </div>
+                                </div>
+                                <div class="hero-floating-card hero-floating-card-2">
+                                    <iconify-icon icon="lucide:heart-pulse" width="20"></iconify-icon>
+                                    <div>
+                                        <span class="floating-card-title">Diabetologist</span>
+                                        <span class="floating-card-sub">CCEBDM Certified</span>
+                                    </div>
+                                </div>
+                                <div class="hero-floating-card hero-floating-card-3">
+                                    <iconify-icon icon="lucide:clock" width="20"></iconify-icon>
+                                    <div>
+                                        <span class="floating-card-title">Available</span>
+                                        <span class="floating-card-sub">Mon, Wed, Fri</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+
+            <!-- Services Preview -->
+            <div class="section section-services-preview">
+                <div class="container">
+                    <div class="section-header scroll-reveal">
+                        <span class="section-tag">What We Treat</span>
+                        <h2 class="section-title">Comprehensive Medical <em>Care</em></h2>
+                        <p class="section-subtitle">Expert diagnosis and treatment across a wide spectrum of medical
+                            conditions, delivered with precision and empathy.</p>
+                    </div>
+                    <div class="services-preview-grid">
+                        <a href="#diabetes" class="service-preview-card scroll-reveal" data-nav="diabetes">
+                            <div class="service-preview-icon">
+                                <iconify-icon icon="lucide:droplets" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="service-preview-title">Diabetes Management</h3>
+                            <p class="service-preview-desc">Complete diabetes care including Type 1, Type 2, and
+                                gestational diabetes with personalized treatment plans.</p>
+                            <span class="service-preview-link">
+                                Learn More
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </span>
+                        </a>
+                        <a href="#blood-pressure" class="service-preview-card scroll-reveal" data-nav="blood-pressure">
+                            <div class="service-preview-icon">
+                                <iconify-icon icon="lucide:activity" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="service-preview-title">Blood Pressure</h3>
+                            <p class="service-preview-desc">Comprehensive hypertension evaluation, monitoring, and
+                                management to prevent cardiovascular complications.</p>
+                            <span class="service-preview-link">
+                                Learn More
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </span>
+                        </a>
+                        <a href="#thyroid" class="service-preview-card scroll-reveal" data-nav="thyroid">
+                            <div class="service-preview-icon">
+                                <iconify-icon icon="lucide:shield" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="service-preview-title">Thyroid Disorders</h3>
+                            <p class="service-preview-desc">Expert diagnosis and treatment of hypothyroidism,
+                                hyperthyroidism, and other thyroid-related conditions.</p>
+                            <span class="service-preview-link">
+                                Learn More
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </span>
+                        </a>
+                        <a href="#respiratory" class="service-preview-card scroll-reveal" data-nav="respiratory">
+                            <div class="service-preview-icon">
+                                <iconify-icon icon="lucide:wind" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="service-preview-title">Respiratory Care</h3>
+                            <p class="service-preview-desc">Harvard-certified expertise in managing asthma, COPD,
+                                respiratory infections, and chronic breathing issues.</p>
+                            <span class="service-preview-link">
+                                Learn More
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </span>
+                        </a>
+                        <a href="#general-medicine" class="service-preview-card scroll-reveal"
+                            data-nav="general-medicine">
+                            <div class="service-preview-icon">
+                                <iconify-icon icon="lucide:stethoscope" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="service-preview-title">General Medicine</h3>
+                            <p class="service-preview-desc">Holistic treatment for fever, infections, pain, stomach
+                                disorders, cough, cold, and routine health concerns.</p>
+                            <span class="service-preview-link">
+                                Learn More
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </span>
+                        </a>
+                        <a href="#appointment" class="service-preview-card service-preview-card-cta scroll-reveal"
+                            data-nav="appointment">
+                            <div class="service-preview-icon">
+                                <iconify-icon icon="lucide:calendar-plus" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="service-preview-title">Book Consultation</h3>
+                            <p class="service-preview-desc">Schedule your visit with Dr. Mondal for a thorough
+                                evaluation and personalized treatment plan.</p>
+                            <span class="service-preview-link">
+                                Book Now
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Section -->
+            <div class="section section-why-choose">
+                <div class="container">
+                    <div class="why-choose-grid">
+                        <div class="why-choose-content scroll-reveal">
+                            <span class="section-tag">Why Choose Us</span>
+                            <h2 class="section-title">A Doctor Who <em>Listens</em></h2>
+                            <p class="why-choose-desc">
+                                In an era of rushed consultations, Dr. Mondal believes in taking the time to understand
+                                each patient's unique health journey. Every treatment plan is crafted with care,
+                                backed by evidence-based medicine and genuine compassion.
+                            </p>
+                            <div class="why-choose-features">
+                                <div class="why-feature">
+                                    <div class="why-feature-icon">
+                                        <iconify-icon icon="lucide:ear" width="20"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h4>Patient-First Approach</h4>
+                                        <p>Every consultation involves thorough listening and understanding of your
+                                            concerns before prescribing.</p>
+                                    </div>
+                                </div>
+                                <div class="why-feature">
+                                    <div class="why-feature-icon">
+                                        <iconify-icon icon="lucide:graduation-cap" width="20"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h4>Harvard Certified</h4>
+                                        <p>International certification in Respiratory Diseases from Harvard Medical
+                                            School ensures world-class expertise.</p>
+                                    </div>
+                                </div>
+                                <div class="why-feature">
+                                    <div class="why-feature-icon">
+                                        <iconify-icon icon="lucide:microscope" width="20"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h4>Evidence-Based Treatment</h4>
+                                        <p>Treatment protocols aligned with the latest medical research and
+                                            international clinical guidelines.</p>
+                                    </div>
+                                </div>
+                                <div class="why-feature">
+                                    <div class="why-feature-icon">
+                                        <iconify-icon icon="lucide:heart-handshake" width="20"></iconify-icon>
+                                    </div>
+                                    <div>
+                                        <h4>Continuity of Care</h4>
+                                        <p>Long-term follow-up and monitoring to ensure your health journey stays on the
+                                            right track.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="why-choose-visual scroll-reveal">
+                            <div class="why-image-grid">
+                                <div class="why-image-item why-image-item-1">
+                                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=500&fit=crop&q=80"
+                                        alt="Clinic Interior">
+                                </div>
+                                <div class="why-image-item why-image-item-2">
+                                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=400&h=500&fit=crop&q=80"
+                                        alt="Consultation">
+                                </div>
+                                <div class="why-image-item why-image-item-3">
+                                    <img src="https://picsum.photos/seed/medical-tools-3/400/300.jpg"
+                                        alt="Medical Equipment">
+                                </div>
+                                <div class="why-experience-badge">
+                                    <span class="why-badge-number">8+</span>
+                                    <span class="why-badge-text">Years of<br>Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="section section-how-it-works">
+                <div class="container">
+                    <div class="section-header scroll-reveal">
+                        <span class="section-tag">Your Visit</span>
+                        <h2 class="section-title">Simple Steps to <em>Better Health</em></h2>
+                        <p class="section-subtitle">From booking to follow-up, your healthcare journey is designed to be
+                            seamless and stress-free.</p>
+                    </div>
+                    <div class="steps-grid">
+                        <div class="step-card scroll-reveal">
+                            <div class="step-number">01</div>
+                            <div class="step-icon">
+                                <iconify-icon icon="lucide:calendar-check" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="step-title">Book Appointment</h3>
+                            <p class="step-desc">Schedule your visit through our online form, WhatsApp, or direct phone
+                                call. Choose your preferred date and time slot.</p>
+                        </div>
+                        <div class="step-connector scroll-reveal">
+                            <iconify-icon icon="lucide:chevron-right" width="24"></iconify-icon>
+                        </div>
+                        <div class="step-card scroll-reveal">
+                            <div class="step-number">02</div>
+                            <div class="step-icon">
+                                <iconify-icon icon="lucide:clipboard-check" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="step-title">Consultation</h3>
+                            <p class="step-desc">Meet Dr. Mondal for a detailed discussion about your symptoms, medical
+                                history, and any concerns you may have.</p>
+                        </div>
+                        <div class="step-connector scroll-reveal">
+                            <iconify-icon icon="lucide:chevron-right" width="24"></iconify-icon>
+                        </div>
+                        <div class="step-card scroll-reveal">
+                            <div class="step-number">03</div>
+                            <div class="step-icon">
+                                <iconify-icon icon="lucide:file-text" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="step-title">Diagnosis & Plan</h3>
+                            <p class="step-desc">Receive a thorough diagnosis with necessary investigations and a
+                                personalized, evidence-based treatment plan.</p>
+                        </div>
+                        <div class="step-connector scroll-reveal">
+                            <iconify-icon icon="lucide:chevron-right" width="24"></iconify-icon>
+                        </div>
+                        <div class="step-card scroll-reveal">
+                            <div class="step-number">04</div>
+                            <div class="step-icon">
+                                <iconify-icon icon="lucide:trending-up" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="step-title">Follow-Up Care</h3>
+                            <p class="step-desc">Regular monitoring and follow-up consultations to track your progress
+                                and adjust treatment as needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visiting Hours -->
+            <div class="section section-visiting-hours">
+                <div class="container">
+                    <div class="visiting-hours-card scroll-reveal">
+                        <div class="vh-content">
+                            <span class="section-tag">Visiting Hours</span>
+                            <h2 class="section-title">Plan Your <em>Visit</em></h2>
+                            <p class="vh-desc">Dr. Mondal is available for consultations on the following days. We
+                                recommend booking in advance to avoid waiting.</p>
+                            <div class="vh-schedule">
+                                <div class="vh-day">
+                                    <div class="vh-day-name">
+                                        <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                                        Monday
+                                    </div>
+                                    <div class="vh-day-slots">
+                                        <span class="vh-slot vh-slot-morning">8:00 AM – 10:00 AM</span>
+                                        <span class="vh-slot vh-slot-evening">4:00 PM – 6:00 PM</span>
+                                    </div>
+                                </div>
+                                <div class="vh-day">
+                                    <div class="vh-day-name">
+                                        <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                                        Wednesday
+                                    </div>
+                                    <div class="vh-day-slots">
+                                        <span class="vh-slot vh-slot-morning">8:00 AM – 10:00 AM</span>
+                                        <span class="vh-slot vh-slot-evening">4:00 PM – 6:00 PM</span>
+                                    </div>
+                                </div>
+                                <div class="vh-day">
+                                    <div class="vh-day-name">
+                                        <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                                        Friday
+                                    </div>
+                                    <div class="vh-day-slots">
+                                        <span class="vh-slot vh-slot-morning">8:00 AM – 10:00 AM</span>
+                                        <span class="vh-slot vh-slot-evening">4:00 PM – 6:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#appointment" class="btn btn-primary btn-lg" data-nav="appointment">
+                                <iconify-icon icon="lucide:calendar-plus" width="18"></iconify-icon>
+                                Schedule Appointment
+                            </a>
+                        </div>
+                        <div class="vh-visual">
+                            <div class="vh-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=700&fit=crop&q=80"
+                                    alt="Clinic">
+                                <div class="vh-overlay-pattern"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Testimonials -->
+            <div class="section section-home-testimonials">
+                <div class="container">
+                    <div class="section-header scroll-reveal">
+                        <span class="section-tag">Patient Stories</span>
+                        <h2 class="section-title">Words of <em>Trust</em></h2>
+                        <p class="section-subtitle">Hear from patients who have experienced compassionate, effective
+                            healthcare.</p>
+                    </div>
+                    <div class="testimonials-slider scroll-reveal" id="home-testimonials-slider">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="testimonial-text">"Dr. Mondal took the time to explain my diabetes management plan
+                                in detail. Her approach is thorough and caring. My sugar levels have been consistently
+                                well-controlled since I started seeing her."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <img src="https://picsum.photos/seed/patient-a1/80/80.jpg" alt="Patient">
+                                </div>
+                                <div>
+                                    <span class="testimonial-name">Rina Das</span>
+                                    <span class="testimonial-condition">Diabetes Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="testimonial-text">"I was struggling with chronic respiratory issues for years.
+                                After Dr. Mondal's Harvard-certified treatment approach, I can finally breathe easy.
+                                She's truly exceptional."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <img src="https://picsum.photos/seed/patient-b2/80/80.jpg" alt="Patient">
+                                </div>
+                                <div>
+                                    <span class="testimonial-name">Amit Sharma</span>
+                                    <span class="testimonial-condition">Respiratory Care</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="testimonial-text">"The best physician I've ever consulted. She diagnosed my
+                                thyroid issue that others had missed. Her calm demeanor and thorough investigation gave
+                                me complete confidence."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <img src="https://picsum.photos/seed/patient-c3/80/80.jpg" alt="Patient">
+                                </div>
+                                <div>
+                                    <span class="testimonial-name">Priya Mukherjee</span>
+                                    <span class="testimonial-condition">Thyroid Disorder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn slider-prev" id="testimonial-prev">
+                            <iconify-icon icon="lucide:arrow-left" width="20"></iconify-icon>
+                        </button>
+                        <div class="slider-dots" id="testimonial-dots"></div>
+                        <button class="slider-btn slider-next" id="testimonial-next">
+                            <iconify-icon icon="lucide:arrow-right" width="20"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home CTA -->
+            <div class="section section-home-cta">
+                <div class="container">
+                    <div class="home-cta-card scroll-reveal">
+                        <div class="home-cta-bg">
+                            <div class="home-cta-orb home-cta-orb-1"></div>
+                            <div class="home-cta-orb home-cta-orb-2"></div>
+                        </div>
+                        <div class="home-cta-content">
+                            <h2 class="home-cta-title">Your Health Deserves <em>Expert Attention</em></h2>
+                            <p class="home-cta-desc">Don't delay your health concerns. Book a consultation with Dr.
+                                Asmita Mondal today and take the first step towards better health.</p>
+                            <div class="home-cta-actions">
+                                <a href="#appointment" class="btn btn-white btn-lg" data-nav="appointment">
+                                    <iconify-icon icon="lucide:calendar-check" width="18"></iconify-icon>
+                                    Book Appointment
+                                </a>
+                                <a href="https://wa.me/918961355152" class="btn btn-outline-white btn-lg"
+                                    target="_blank">
+                                    <iconify-icon icon="lucide:message-circle" width="18"></iconify-icon>
+                                    WhatsApp Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: ABOUT ===== -->
+        <section id="page-about" class="page" data-page="about">
+            <div class="page-hero page-hero-about">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">About the Doctor</span>
+                        <h1 class="page-hero-title scroll-reveal">Dr. Asmita <em>Mondal</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">MBBS (WBUHS), CCEBDM (Diabetes) | General Physician
+                            & Diabetologist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-image-col scroll-reveal">
+                            <div class="about-image-main">
+                                <img src="https://i.ibb.co/S7Q6vMT6/asmita-Copy.png" alt="Dr. Asmita Mondal">
+                            </div>
+                            <div class="about-image-accent-card">
+                                <iconify-icon icon="lucide:badge-check" width="24"></iconify-icon>
+                                <span>WBMC Registered<br>Reg. No. 86487</span>
+                            </div>
+                        </div>
+                        <div class="about-content-col scroll-reveal">
+                            <span class="section-tag">Doctor Profile</span>
+                            <h2 class="section-title">Dedicated to <em>Your Well-Being</em></h2>
+                            <div class="about-text-blocks">
+                                <p>Dr. Asmita Mondal is a highly qualified General Physician and Diabetologist
+                                    practicing in Kolkata, West Bengal. With a strong foundation in modern medicine from
+                                    West Bengal University of Health Sciences (WBUHS) and specialized certification in
+                                    Diabetes management (CCEBDM), she brings a comprehensive approach to patient care.
+                                </p>
+                                <p>Her tenure as House Physician in the Department of Emergency Medicine at R.G. Kar
+                                    Medical College & Hospital — one of the premier medical institutions in Eastern
+                                    India — equipped her with extensive clinical experience in managing acute and
+                                    chronic medical conditions under high-pressure environments.</p>
+                                <p>Driven by a commitment to continuous learning, Dr. Mondal earned certification from
+                                    Harvard Medical School's International Respiratory Diseases Programme, bringing
+                                    globally recognized expertise to her respiratory care practice in Kolkata.</p>
+                            </div>
+                            <div class="about-qualifications-grid">
+                                <div class="about-qual-item">
+                                    <iconify-icon icon="lucide:graduation-cap" width="22"></iconify-icon>
+                                    <div>
+                                        <strong>MBBS</strong>
+                                        <span>WBUHS</span>
+                                    </div>
+                                </div>
+                                <div class="about-qual-item">
+                                    <iconify-icon icon="lucide:award" width="22"></iconify-icon>
+                                    <div>
+                                        <strong>CCEBDM</strong>
+                                        <span>Diabetes</span>
+                                    </div>
+                                </div>
+                                <div class="about-qual-item">
+                                    <iconify-icon icon="lucide:badge-check" width="22"></iconify-icon>
+                                    <div>
+                                        <strong>WBMC</strong>
+                                        <span>Reg. No. 86487</span>
+                                    </div>
+                                </div>
+                                <div class="about-qual-item">
+                                    <iconify-icon icon="lucide:globe" width="22"></iconify-icon>
+                                    <div>
+                                        <strong>Harvard</strong>
+                                        <span>Respiratory Cert.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#appointment" class="btn btn-primary btn-lg" data-nav="appointment">
+                                <iconify-icon icon="lucide:calendar-check" width="18"></iconify-icon>
+                                Consult Dr. Mondal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-about-values">
+                <div class="container">
+                    <div class="section-header scroll-reveal">
+                        <span class="section-tag">Core Values</span>
+                        <h2 class="section-title">Principles That <em>Guide Care</em></h2>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card scroll-reveal">
+                            <div class="value-icon"><iconify-icon icon="lucide:heart" width="28"></iconify-icon></div>
+                            <h3>Compassion</h3>
+                            <p>Every patient is treated with empathy, dignity, and genuine concern for their well-being.
+                            </p>
+                        </div>
+                        <div class="value-card scroll-reveal">
+                            <div class="value-icon"><iconify-icon icon="lucide:target" width="28"></iconify-icon></div>
+                            <h3>Precision</h3>
+                            <p>Accurate diagnosis through thorough investigation, leaving no stone unturned in
+                                understanding your condition.</p>
+                        </div>
+                        <div class="value-card scroll-reveal">
+                            <div class="value-icon"><iconify-icon icon="lucide:lightbulb" width="28"></iconify-icon>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p>Staying current with the latest medical advancements and integrating them into clinical
+                                practice.</p>
+                        </div>
+                        <div class="value-card scroll-reveal">
+                            <div class="value-icon"><iconify-icon icon="lucide:users" width="28"></iconify-icon></div>
+                            <h3>Trust</h3>
+                            <p>Building lasting relationships through transparency, honesty, and consistent quality of
+                                care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: CREDENTIALS ===== -->
+        <section id="page-credentials" class="page" data-page="credentials">
+            <div class="page-hero page-hero-credentials">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Professional Background</span>
+                        <h1 class="page-hero-title scroll-reveal">Credentials & <em>Experience</em></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="credentials-timeline scroll-reveal">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Present</span>
+                                <h3>Practicing General Physician & Diabetologist</h3>
+                                <p>Running independent clinical practice in Kolkata, specializing in Diabetes, Thyroid,
+                                    Hypertension, Respiratory diseases, and General Medicine. Managing over 1000+
+                                    patients with a focus on chronic disease management and preventive care.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Certification</span>
+                                <h3>International Respiratory Diseases Programme</h3>
+                                <p>Completed certification from Harvard Medical School in International Respiratory
+                                    Diseases, covering advanced diagnostic and therapeutic approaches for asthma, COPD,
+                                    interstitial lung diseases, and respiratory infections.</p>
+                                <div class="timeline-badge">
+                                    <iconify-icon icon="lucide:award" width="16"></iconify-icon>
+                                    Harvard Medical School
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Certification</span>
+                                <h3>CCEBDM – Certificate in Diabetes Management</h3>
+                                <p>Specialized certification in evidence-based diabetes management, including insulin
+                                    therapy, oral hypoglycemic agents, diabetic complications screening, and patient
+                                    education.</p>
+                                <div class="timeline-badge">
+                                    <iconify-icon icon="lucide:award" width="16"></iconify-icon>
+                                    CCEBDM Certified
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Experience</span>
+                                <h3>House Physician – Emergency Medicine</h3>
+                                <p>Served as House Physician in the Department of Emergency Medicine at R.G. Kar Medical
+                                    College & Hospital, Kolkata. Gained extensive hands-on experience in acute patient
+                                    management, triage, emergency procedures, and critical care.</p>
+                                <div class="timeline-badge">
+                                    <iconify-icon icon="lucide:building-2" width="16"></iconify-icon>
+                                    R.G. Kar Medical College & Hospital
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Education</span>
+                                <h3>MBBS – Bachelor of Medicine, Bachelor of Surgery</h3>
+                                <p>Completed undergraduate medical education from West Bengal University of Health
+                                    Sciences (WBUHS), building a strong foundation in all major medical disciplines
+                                    including Anatomy, Physiology, Pharmacology, Pathology, and Clinical Medicine.</p>
+                                <div class="timeline-badge">
+                                    <iconify-icon icon="lucide:graduation-cap" width="16"></iconify-icon>
+                                    WBUHS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="credentials-registration scroll-reveal">
+                        <div class="reg-card">
+                            <div class="reg-icon">
+                                <iconify-icon icon="lucide:shield-check" width="40"></iconify-icon>
+                            </div>
+                            <div class="reg-info">
+                                <h3>West Bengal Medical Council Registration</h3>
+                                <p class="reg-number">Registration Number: <strong>86487</strong></p>
+                                <p>Verified and registered medical practitioner under the West Bengal Medical Council,
+                                    ensuring adherence to the highest standards of medical ethics and practice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: SERVICES OVERVIEW ===== -->
+        <section id="page-services" class="page" data-page="services">
+            <div class="page-hero page-hero-services">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Medical Services</span>
+                        <h1 class="page-hero-title scroll-reveal">Expert <em>Healthcare</em> Services</h1>
+                        <p class="page-hero-subtitle scroll-reveal">Comprehensive medical care across multiple
+                            specialties, delivered with expertise and compassion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="services-full-grid">
+                        <a href="#diabetes" class="service-full-card scroll-reveal" data-nav="diabetes">
+                            <div class="service-full-image">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop&q=80"
+                                    alt="Diabetes Management">
+                                <div class="service-full-overlay"></div>
+                            </div>
+                            <div class="service-full-content">
+                                <div class="service-full-icon"><iconify-icon icon="lucide:droplets"
+                                        width="24"></iconify-icon></div>
+                                <h3>Diabetes Management</h3>
+                                <p>Complete care for Type 1, Type 2, and gestational diabetes with personalized
+                                    treatment plans, dietary guidance, and regular monitoring.</p>
+                                <span class="service-full-link">Explore Service <iconify-icon icon="lucide:arrow-right"
+                                        width="16"></iconify-icon></span>
+                            </div>
+                        </a>
+                        <a href="#blood-pressure" class="service-full-card scroll-reveal" data-nav="blood-pressure">
+                            <div class="service-full-image">
+                                <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=400&fit=crop&q=80"
+                                    alt="Blood Pressure">
+                                <div class="service-full-overlay"></div>
+                            </div>
+                            <div class="service-full-content">
+                                <div class="service-full-icon"><iconify-icon icon="lucide:activity"
+                                        width="24"></iconify-icon></div>
+                                <h3>Blood Pressure Management</h3>
+                                <p>Thorough evaluation and management of hypertension with lifestyle modification advice
+                                    and medication optimization.</p>
+                                <span class="service-full-link">Explore Service <iconify-icon icon="lucide:arrow-right"
+                                        width="16"></iconify-icon></span>
+                            </div>
+                        </a>
+                        <a href="#thyroid" class="service-full-card scroll-reveal" data-nav="thyroid">
+                            <div class="service-full-image">
+                                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=400&fit=crop&q=80"
+                                    alt="Thyroid">
+                                <div class="service-full-overlay"></div>
+                            </div>
+                            <div class="service-full-content">
+                                <div class="service-full-icon"><iconify-icon icon="lucide:shield"
+                                        width="24"></iconify-icon></div>
+                                <h3>Thyroid Disorders</h3>
+                                <p>Expert diagnosis and treatment of hypothyroidism, hyperthyroidism, goiter, and
+                                    thyroiditis with regular hormone level monitoring.</p>
+                                <span class="service-full-link">Explore Service <iconify-icon icon="lucide:arrow-right"
+                                        width="16"></iconify-icon></span>
+                            </div>
+                        </a>
+                        <a href="#respiratory" class="service-full-card scroll-reveal" data-nav="respiratory">
+                            <div class="service-full-image">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&q=80"
+                                    alt="Respiratory">
+                                <div class="service-full-overlay"></div>
+                            </div>
+                            <div class="service-full-content">
+                                <div class="service-full-icon"><iconify-icon icon="lucide:wind"
+                                        width="24"></iconify-icon></div>
+                                <h3>Respiratory Care</h3>
+                                <p>Harvard-certified management of asthma, COPD, chronic bronchitis, allergic rhinitis,
+                                    and respiratory infections.</p>
+                                <span class="service-full-link">Explore Service <iconify-icon icon="lucide:arrow-right"
+                                        width="16"></iconify-icon></span>
+                            </div>
+                        </a>
+                        <a href="#general-medicine" class="service-full-card scroll-reveal" data-nav="general-medicine">
+                            <div class="service-full-image">
+                                <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&h=400&fit=crop&q=80"
+                                    alt="General Medicine">
+                                <div class="service-full-overlay"></div>
+                            </div>
+                            <div class="service-full-content">
+                                <div class="service-full-icon"><iconify-icon icon="lucide:stethoscope"
+                                        width="24"></iconify-icon></div>
+                                <h3>General Medicine</h3>
+                                <p>Comprehensive treatment for fever, infections, pain disorders, stomach issues, cough,
+                                    cold, and routine health problems.</p>
+                                <span class="service-full-link">Explore Service <iconify-icon icon="lucide:arrow-right"
+                                        width="16"></iconify-icon></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: DIABETES ===== -->
+        <section id="page-diabetes" class="page" data-page="diabetes">
+            <div class="page-hero page-hero-diabetes">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Specialized Care</span>
+                        <h1 class="page-hero-title scroll-reveal">Diabetes <em>Management</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">CCEBDM Certified | Evidence-Based Diabetes Care</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-content scroll-reveal">
+                            <span class="section-tag">Diabetes Care</span>
+                            <h2 class="section-title">Comprehensive Diabetes <em>Management</em></h2>
+                            <p>Diabetes is a chronic condition that requires expert, ongoing management. Dr. Mondal's
+                                CCEBDM certification ensures you receive the highest standard of diabetes care, tailored
+                                to your specific type and lifestyle.</p>
+                            <div class="service-detail-list">
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div>
+                                        <strong>Type 1 Diabetes</strong>
+                                        <p>Insulin therapy management, blood glucose monitoring, and lifestyle
+                                            counseling for optimal control.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div>
+                                        <strong>Type 2 Diabetes</strong>
+                                        <p>Oral hypoglycemic agents, combination therapy, insulin initiation when
+                                            needed, and dietary modification plans.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div>
+                                        <strong>Gestational Diabetes</strong>
+                                        <p>Specialized monitoring and management during pregnancy to ensure maternal and
+                                            fetal well-being.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div>
+                                        <strong>Diabetic Complications</strong>
+                                        <p>Early screening and management of neuropathy, retinopathy, nephropathy, and
+                                            diabetic foot care.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-detail-image scroll-reveal">
+                            <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&h=800&fit=crop&q=80"
+                                alt="Diabetes Care">
+                            <div class="service-detail-stat-card">
+                                <iconify-icon icon="lucide:trending-down" width="24"></iconify-icon>
+                                <div>
+                                    <span class="stat-value">85%</span>
+                                    <span class="stat-label">HbA1c Improvement Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: BLOOD PRESSURE ===== -->
+        <section id="page-blood-pressure" class="page" data-page="blood-pressure">
+            <div class="page-hero page-hero-bp">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Cardiovascular Health</span>
+                        <h1 class="page-hero-title scroll-reveal">Blood Pressure <em>Management</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Preventing Complications Through Expert Monitoring
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="service-detail-grid service-detail-grid-reverse">
+                        <div class="service-detail-content scroll-reveal">
+                            <span class="section-tag">Hypertension Care</span>
+                            <h2 class="section-title">Blood Pressure <em>Control</em></h2>
+                            <p>Hypertension, often called the "silent killer," can lead to serious complications if left
+                                untreated. Dr. Mondal provides systematic evaluation, classification, and tailored
+                                treatment plans.</p>
+                            <div class="service-detail-list">
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Ambulatory BP Monitoring</strong>
+                                        <p>24-hour blood pressure tracking for accurate diagnosis and treatment
+                                            evaluation.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Medication Optimization</strong>
+                                        <p>Individualized antihypertensive therapy with minimal side effects for better
+                                            compliance.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Lifestyle Modification</strong>
+                                        <p>Dietary counseling (DASH diet), exercise recommendations, stress management,
+                                            and sodium restriction guidance.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Target Organ Protection</strong>
+                                        <p>Regular screening for cardiac, renal, and cerebrovascular complications of
+                                            hypertension.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-detail-image scroll-reveal">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&h=800&fit=crop&q=80"
+                                alt="Blood Pressure Care">
+                            <div class="service-detail-stat-card">
+                                <iconify-icon icon="lucide:heart-pulse" width="24"></iconify-icon>
+                                <div>
+                                    <span class="stat-value">90%</span>
+                                    <span class="stat-label">BP Control Achievement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: THYROID ===== -->
+        <section id="page-thyroid" class="page" data-page="thyroid">
+            <div class="page-hero page-hero-thyroid">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Endocrine Care</span>
+                        <h1 class="page-hero-title scroll-reveal">Thyroid <em>Disorders</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Accurate Diagnosis & Hormone Optimization</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="service-detail-grid">
+                        <div class="service-detail-content scroll-reveal">
+                            <span class="section-tag">Thyroid Care</span>
+                            <h2 class="section-title">Thyroid Health <em>Management</em></h2>
+                            <p>Thyroid disorders affect millions, often going undiagnosed. Dr. Mondal provides
+                                comprehensive thyroid evaluation, from initial screening to long-term hormone
+                                management.</p>
+                            <div class="service-detail-list">
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Hypothyroidism</strong>
+                                        <p>Thyroid hormone replacement therapy with regular TSH monitoring and dose
+                                            adjustment.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Hyperthyroidism</strong>
+                                        <p>Antithyroid medication management, symptom control, and referral for
+                                            definitive treatment when needed.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Thyroid Nodules</strong>
+                                        <p>Evaluation, risk stratification, and appropriate referral for FNAC or
+                                            surgical consultation.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Thyroid in Pregnancy</strong>
+                                        <p>Pre-conception counseling, trimester-specific TSH targets, and safe
+                                            medication during pregnancy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-detail-image scroll-reveal">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=800&fit=crop&q=80"
+                                alt="Thyroid Care">
+                            <div class="service-detail-stat-card">
+                                <iconify-icon icon="lucide:shield-check" width="24"></iconify-icon>
+                                <div>
+                                    <span class="stat-value">95%</span>
+                                    <span class="stat-label">Hormone Level Normalization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: RESPIRATORY ===== -->
+        <section id="page-respiratory" class="page" data-page="respiratory">
+            <div class="page-hero page-hero-respiratory">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Harvard Certified</span>
+                        <h1 class="page-hero-title scroll-reveal">Respiratory <em>Care</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">International Expertise in Respiratory Diseases</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="service-detail-grid service-detail-grid-reverse">
+                        <div class="service-detail-content scroll-reveal">
+                            <span class="section-tag">Respiratory Care</span>
+                            <h2 class="section-title">Advanced Respiratory <em>Treatment</em></h2>
+                            <p>Dr. Mondal's certification from Harvard Medical School's International Respiratory
+                                Diseases Programme brings world-class respiratory care to Kolkata. From common
+                                conditions to complex chronic diseases, expect thorough, evidence-based management.</p>
+                            <div class="service-detail-list">
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Asthma</strong>
+                                        <p>Step-wise management with inhaled corticosteroids, bronchodilators, action
+                                            plans, and trigger avoidance strategies.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>COPD</strong>
+                                        <p>Spriometry-based diagnosis, bronchodilator therapy, pulmonary rehabilitation
+                                            guidance, and exacerbation prevention.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Respiratory Infections</strong>
+                                        <p>Acute bronchitis, pneumonia, upper respiratory tract infections, and
+                                            post-viral cough management.</p>
+                                    </div>
+                                </div>
+                                <div class="service-detail-item">
+                                    <iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon>
+                                    <div><strong>Allergic Rhinitis</strong>
+                                        <p>Comprehensive allergy management including antihistamines, nasal sprays, and
+                                            allergen avoidance counseling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="harvard-badge-inline">
+                                <iconify-icon icon="lucide:award" width="20"></iconify-icon>
+                                <span>Certified by <strong>Harvard Medical School</strong> — International Respiratory
+                                    Diseases Programme</span>
+                            </div>
+                        </div>
+                        <div class="service-detail-image scroll-reveal">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=800&fit=crop&q=80"
+                                alt="Respiratory Care">
+                            <div class="service-detail-stat-card">
+                                <iconify-icon icon="lucide:wind" width="24"></iconify-icon>
+                                <div>
+                                    <span class="stat-value">Harvard</span>
+                                    <span class="stat-label">Certified Expertise</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: GENERAL MEDICINE ===== -->
+        <section id="page-general-medicine" class="page" data-page="general-medicine">
+            <div class="page-hero page-hero-general">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Primary Care</span>
+                        <h1 class="page-hero-title scroll-reveal">General <em>Medicine</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Holistic Treatment for Everyday Health Concerns</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="general-medicine-grid">
+                        <div class="gm-intro scroll-reveal">
+                            <span class="section-tag">General Medicine</span>
+                            <h2 class="section-title">Your First Point of <em>Care</em></h2>
+                            <p>Whether it's a persistent fever, a stubborn cough, unexplained pain, or a stomach upset —
+                                Dr. Mondal provides thorough evaluation and effective treatment for a wide range of
+                                common medical conditions.</p>
+                        </div>
+                        <div class="gm-conditions-grid">
+                            <div class="gm-condition-card scroll-reveal">
+                                <iconify-icon icon="lucide:thermometer" width="28"></iconify-icon>
+                                <h3>Fever</h3>
+                                <p>Dengue, malaria, typhoid, viral fever, and unexplained febrile illness with
+                                    appropriate investigations.</p>
+                            </div>
+                            <div class="gm-condition-card scroll-reveal">
+                                <iconify-icon icon="lucide:bug" width="28"></iconify-icon>
+                                <h3>Infections</h3>
+                                <p>UTI, respiratory infections, skin infections, gastrointestinal infections with
+                                    targeted antibiotic therapy.</p>
+                            </div>
+                            <div class="gm-condition-card scroll-reveal">
+                                <iconify-icon icon="lucide:frown" width="28"></iconify-icon>
+                                <h3>Pain Management</h3>
+                                <p>Headache, back pain, joint pain, body aches, and musculoskeletal pain with proper
+                                    diagnosis and treatment.</p>
+                            </div>
+                            <div class="gm-condition-card scroll-reveal">
+                                <iconify-icon icon="lucide:circle-dot" width="28"></iconify-icon>
+                                <h3>Stomach Disorders</h3>
+                                <p>Acidity, GERD, IBS, gastritis, bloating, constipation, and diarrhea with dietary and
+                                    medical management.</p>
+                            </div>
+                            <div class="gm-condition-card scroll-reveal">
+                                <iconify-icon icon="lucide:cloud-rain" width="28"></iconify-icon>
+                                <h3>Cough & Cold</h3>
+                                <p>Upper respiratory infections, allergic cough, post-viral cough, and seasonal
+                                    respiratory illnesses.</p>
+                            </div>
+                            <div class="gm-condition-card scroll-reveal">
+                                <iconify-icon icon="lucide:zap" width="28"></iconify-icon>
+                                <h3>Fatigue & Weakness</h3>
+                                <p>Evaluation of chronic fatigue, nutritional deficiencies, anemia, and generalized
+                                    weakness with appropriate workup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: APPOINTMENT ===== -->
+        <section id="page-appointment" class="page" data-page="appointment">
+            <div class="page-hero page-hero-appointment">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Schedule Visit</span>
+                        <h1 class="page-hero-title scroll-reveal">Book Your <em>Appointment</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Fill in the details below and we'll confirm your
+                            appointment via WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="appointment-grid">
+                        <div class="appointment-info scroll-reveal">
+                            <div class="ap-info-card">
+                                <h3>Visiting Hours</h3>
+                                <div class="ap-hours">
+                                    <div class="ap-hour-row">
+                                        <span class="ap-day">Monday</span>
+                                        <span class="ap-time">8–10 AM | 4–6 PM</span>
+                                    </div>
+                                    <div class="ap-hour-row">
+                                        <span class="ap-day">Wednesday</span>
+                                        <span class="ap-time">8–10 AM | 4–6 PM</span>
+                                    </div>
+                                    <div class="ap-hour-row">
+                                        <span class="ap-day">Friday</span>
+                                        <span class="ap-time">8–10 AM | 4–6 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ap-info-card">
+                                <h3>Contact Information</h3>
+                                <div class="ap-contact-list">
+                                    <div class="ap-contact-item">
+                                        <iconify-icon icon="lucide:phone" width="18"></iconify-icon>
+                                        <a href="tel:8961355152">8961355152</a>
+                                    </div>
+                                    <div class="ap-contact-item">
+                                        <iconify-icon icon="lucide:message-circle" width="18"></iconify-icon>
+                                        <a href="https://wa.me/918961355152" target="_blank">WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ap-info-card ap-info-note">
+                                <iconify-icon icon="lucide:info" width="20"></iconify-icon>
+                                <p>Appointment confirmation will be sent via WhatsApp. Please ensure your phone number
+                                    is correct.</p>
+                            </div>
+                        </div>
+                        <div class="appointment-form-wrapper scroll-reveal">
+                            <form id="appointment-form" class="appointment-form" novalidate>
+                                <div class="form-section-title">
+                                    <iconify-icon icon="lucide:user" width="18"></iconify-icon>
+                                    Personal Information
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-fullname">Full Name <span class="required">*</span></label>
+                                        <input type="text" id="ap-fullname" name="fullname"
+                                            placeholder="Enter your full name" required>
+                                        <span class="form-error">Please enter your full name</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-age">Age <span class="required">*</span></label>
+                                        <input type="number" id="ap-age" name="age" placeholder="Your age" min="1"
+                                            max="120" required>
+                                        <span class="form-error">Please enter a valid age</span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-gender">Gender <span class="required">*</span></label>
+                                        <select id="ap-gender" name="gender" required>
+                                            <option value="" disabled selected>Select gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <span class="form-error">Please select your gender</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-phone">Phone Number <span class="required">*</span></label>
+                                        <input type="tel" id="ap-phone" name="phone"
+                                            placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                                        <span class="form-error">Please enter a valid 10-digit number</span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-email">Email Address</label>
+                                        <input type="email" id="ap-email" name="email" placeholder="your@email.com">
+                                        <span class="form-error">Please enter a valid email</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-blood-group">Blood Group</label>
+                                        <select id="ap-blood-group" name="blood_group">
+                                            <option value="" disabled selected>Select blood group</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                            <option value="Unknown">Don't Know</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-section-title">
+                                    <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                                    Appointment Details
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-preferred-day">Preferred Day <span
+                                                class="required">*</span></label>
+                                        <select id="ap-preferred-day" name="preferred_day" required>
+                                            <option value="" disabled selected>Select day</option>
+                                            <option value="Monday (Morning: 8-10 AM)">Monday – Morning (8–10 AM)
+                                            </option>
+                                            <option value="Monday (Evening: 4-6 PM)">Monday – Evening (4–6 PM)</option>
+                                            <option value="Wednesday (Morning: 8-10 AM)">Wednesday – Morning (8–10 AM)
+                                            </option>
+                                            <option value="Wednesday (Evening: 4-6 PM)">Wednesday – Evening (4–6 PM)
+                                            </option>
+                                            <option value="Friday (Morning: 8-10 AM)">Friday – Morning (8–10 AM)
+                                            </option>
+                                            <option value="Friday (Evening: 4-6 PM)">Friday – Evening (4–6 PM)</option>
+                                        </select>
+                                        <span class="form-error">Please select a preferred day</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-preferred-date">Preferred Date <span
+                                                class="required">*</span></label>
+                                        <input type="date" id="ap-preferred-date" name="preferred_date" required>
+                                        <span class="form-error">Please select a date</span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-consultation-type">Consultation Type <span
+                                                class="required">*</span></label>
+                                        <select id="ap-consultation-type" name="consultation_type" required>
+                                            <option value="" disabled selected>Select type</option>
+                                            <option value="New Patient">New Patient – First Visit</option>
+                                            <option value="Follow-up">Follow-up Visit</option>
+                                            <option value="Review Reports">Report Review</option>
+                                            <option value="Second Opinion">Second Opinion</option>
+                                        </select>
+                                        <span class="form-error">Please select consultation type</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-primary-concern">Primary Concern <span
+                                                class="required">*</span></label>
+                                        <select id="ap-primary-concern" name="primary_concern" required>
+                                            <option value="" disabled selected>Select concern</option>
+                                            <option value="Diabetes">Diabetes</option>
+                                            <option value="Blood Pressure">Blood Pressure</option>
+                                            <option value="Thyroid">Thyroid Disorder</option>
+                                            <option value="Respiratory Issue">Respiratory Issue</option>
+                                            <option value="Fever">Fever</option>
+                                            <option value="Cough/Cold">Cough / Cold</option>
+                                            <option value="Stomach Disorder">Stomach Disorder</option>
+                                            <option value="Pain">Pain-related Issue</option>
+                                            <option value="General Checkup">General Checkup</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <span class="form-error">Please select your primary concern</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-section-title">
+                                    <iconify-icon icon="lucide:file-text" width="18"></iconify-icon>
+                                    Medical Information
+                                </div>
+                                <div class="form-group">
+                                    <label for="ap-symptoms">Describe Your Symptoms <span
+                                            class="required">*</span></label>
+                                    <textarea id="ap-symptoms" name="symptoms" rows="4"
+                                        placeholder="Please describe your symptoms, how long you've had them, and any relevant details..."
+                                        required></textarea>
+                                    <span class="form-error">Please describe your symptoms</span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-existing-conditions">Existing Medical Conditions</label>
+                                        <input type="text" id="ap-existing-conditions" name="existing_conditions"
+                                            placeholder="e.g., Diabetes, Hypertension, etc.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-current-medications">Current Medications</label>
+                                        <input type="text" id="ap-current-medications" name="current_medications"
+                                            placeholder="List any medicines you're taking">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ap-allergies">Known Allergies</label>
+                                        <input type="text" id="ap-allergies" name="allergies"
+                                            placeholder="e.g., Penicillin, Dust, etc.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ap-previous-surgery">Previous Surgeries</label>
+                                        <input type="text" id="ap-previous-surgery" name="previous_surgery"
+                                            placeholder="Any past surgeries (if any)">
+                                    </div>
+                                </div>
+
+                                <div class="form-section-title">
+                                    <iconify-icon icon="lucide:clipboard-list" width="18"></iconify-icon>
+                                    Additional Details
+                                </div>
+                                <div class="form-group">
+                                    <label for="ap-referred-by">Referred By</label>
+                                    <input type="text" id="ap-referred-by" name="referred_by"
+                                        placeholder="Doctor's name or source (if any)">
+                                </div>
+                                <div class="form-group form-group-checkbox">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="ap-consent" name="consent" required>
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">I consent to providing my personal and medical
+                                            information for the purpose of booking an appointment. I understand that
+                                            this information will be shared with the doctor for better consultation.
+                                            <span class="required">*</span></span>
+                                    </label>
+                                    <span class="form-error">Please accept the consent</span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg btn-block form-submit-btn"
+                                    id="form-submit-btn">
+                                    <iconify-icon icon="lucide:send" width="18"></iconify-icon>
+                                    <span>Send Appointment Request via WhatsApp</span>
+                                </button>
+                                <p class="form-disclaimer">By submitting, your appointment details will be sent to our
+                                    WhatsApp for confirmation. This is a request, not a confirmed booking.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: HEALTH TIPS ===== -->
+        <section id="page-health-tips" class="page" data-page="health-tips">
+            <div class="page-hero page-hero-tips">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Knowledge Center</span>
+                        <h1 class="page-hero-title scroll-reveal">Health <em>Tips</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Practical advice for a healthier life from Dr.
+                            Mondal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="tips-grid">
+                        <article class="tip-card scroll-reveal">
+                            <div class="tip-image"><img
+                                    src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop&q=80"
+                                    alt="Diabetes Diet"></div>
+                            <div class="tip-content">
+                                <span class="tip-category">Diabetes</span>
+                                <h3>10 Foods That Help Control Blood Sugar Naturally</h3>
+                                <p>Discover everyday Indian foods that have proven blood sugar-lowering properties and
+                                    how to incorporate them into your daily meals for better diabetes management.</p>
+                                <div class="tip-meta">
+                                    <span><iconify-icon icon="lucide:clock" width="14"></iconify-icon> 5 min read</span>
+                                    <span><iconify-icon icon="lucide:calendar" width="14"></iconify-icon> Jan
+                                        2026</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tip-card scroll-reveal">
+                            <div class="tip-image"><img
+                                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&q=80"
+                                    alt="BP Lifestyle"></div>
+                            <div class="tip-content">
+                                <span class="tip-category">Blood Pressure</span>
+                                <h3>Lifestyle Changes That Can Lower Your Blood Pressure</h3>
+                                <p>Beyond medication, simple lifestyle modifications can significantly reduce blood
+                                    pressure. Learn about the DASH diet, exercise routines, and stress management
+                                    techniques.</p>
+                                <div class="tip-meta">
+                                    <span><iconify-icon icon="lucide:clock" width="14"></iconify-icon> 6 min read</span>
+                                    <span><iconify-icon icon="lucide:calendar" width="14"></iconify-icon> Dec
+                                        2025</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tip-card scroll-reveal">
+                            <div class="tip-image"><img
+                                    src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop&q=80"
+                                    alt="Thyroid Diet"></div>
+                            <div class="tip-content">
+                                <span class="tip-category">Thyroid</span>
+                                <h3>Thyroid-Friendly Diet: What to Eat and Avoid</h3>
+                                <p>Your diet plays a crucial role in thyroid function. Understand which foods support
+                                    thyroid health and which ones may interfere with your medication absorption.</p>
+                                <div class="tip-meta">
+                                    <span><iconify-icon icon="lucide:clock" width="14"></iconify-icon> 4 min read</span>
+                                    <span><iconify-icon icon="lucide:calendar" width="14"></iconify-icon> Nov
+                                        2025</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tip-card scroll-reveal">
+                            <div class="tip-image"><img
+                                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop&q=80"
+                                    alt="Breathing Exercises"></div>
+                            <div class="tip-content">
+                                <span class="tip-category">Respiratory</span>
+                                <h3>Breathing Exercises for Better Lung Health</h3>
+                                <p>Simple yet effective breathing techniques that can improve lung capacity, reduce
+                                    respiratory symptoms, and enhance overall well-being — recommended by respiratory
+                                    experts.</p>
+                                <div class="tip-meta">
+                                    <span><iconify-icon icon="lucide:clock" width="14"></iconify-icon> 4 min read</span>
+                                    <span><iconify-icon icon="lucide:calendar" width="14"></iconify-icon> Oct
+                                        2025</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tip-card scroll-reveal">
+                            <div class="tip-image"><img
+                                    src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&q=80"
+                                    alt="Immunity"></div>
+                            <div class="tip-content">
+                                <span class="tip-category">General Health</span>
+                                <h3>Building Immunity: A Doctor's Guide for Indian Families</h3>
+                                <p>Practical, evidence-based tips to strengthen your family's immune system through
+                                    nutrition, sleep, exercise, and vaccination — tailored for Indian households.</p>
+                                <div class="tip-meta">
+                                    <span><iconify-icon icon="lucide:clock" width="14"></iconify-icon> 7 min read</span>
+                                    <span><iconify-icon icon="lucide:calendar" width="14"></iconify-icon> Sep
+                                        2025</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tip-card scroll-reveal">
+                            <div class="tip-image"><img
+                                    src="https://images.unsplash.com/photo-1607532941433-304659e8198a?w=600&h=400&fit=crop&q=80"
+                                    alt="Gut Health"></div>
+                            <div class="tip-content">
+                                <span class="tip-category">Digestive Health</span>
+                                <h3>Gut Health Matters: Understanding Your Stomach Better</h3>
+                                <p>From acidity to IBS, understand why your stomach acts up and what you can do about
+                                    it. Includes dietary tips, meal timing advice, and when to see a doctor.</p>
+                                <div class="tip-meta">
+                                    <span><iconify-icon icon="lucide:clock" width="14"></iconify-icon> 5 min read</span>
+                                    <span><iconify-icon icon="lucide:calendar" width="14"></iconify-icon> Aug
+                                        2025</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: FAQs ===== -->
+        <section id="page-faqs" class="page" data-page="faqs">
+            <div class="page-hero page-hero-faqs">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Help Center</span>
+                        <h1 class="page-hero-title scroll-reveal">Frequently Asked <em>Questions</em></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="faq-categories">
+                        <button class="faq-cat-btn active" data-faq-cat="all">All</button>
+                        <button class="faq-cat-btn" data-faq-cat="general">General</button>
+                        <button class="faq-cat-btn" data-faq-cat="appointment">Appointment</button>
+                        <button class="faq-cat-btn" data-faq-cat="treatment">Treatment</button>
+                        <button class="faq-cat-btn" data-faq-cat="payment">Payment</button>
+                    </div>
+                    <div class="faq-list" id="faq-list">
+                        <div class="faq-item scroll-reveal" data-cat="general">
+                            <button class="faq-question">
+                                <span>What are Dr. Mondal's qualifications?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Dr. Asmita Mondal holds an MBBS degree from West Bengal University of Health Sciences
+                                    (WBUHS) and a CCEBDM certification in Diabetes Management. She is also certified by
+                                    Harvard Medical School in their International Respiratory Diseases Programme. She is
+                                    registered with the West Bengal Medical Council (Reg. No. 86487).</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="general">
+                            <button class="faq-question">
+                                <span>What conditions does Dr. Mondal treat?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Dr. Mondal treats a wide range of conditions including Diabetes (Type 1, Type 2,
+                                    Gestational), Hypertension (Blood Pressure), Thyroid Disorders (Hypothyroidism,
+                                    Hyperthyroidism), Respiratory Issues (Asthma, COPD, Respiratory Infections), and
+                                    General Medicine conditions like Fever, Cough/Cold, Stomach Disorders, Pain-related
+                                    issues, and other general illnesses.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="appointment">
+                            <button class="faq-question">
+                                <span>What are the visiting hours?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Dr. Mondal is available on Monday, Wednesday, and Friday. Morning slots are from 8:00
+                                    AM to 10:00 AM, and evening slots are from 4:00 PM to 6:00 PM. We recommend booking
+                                    in advance to secure your preferred time slot.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="appointment">
+                            <button class="faq-question">
+                                <span>How can I book an appointment?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can book an appointment through our online form on this website, by calling
+                                    8961355152 directly, or by sending a WhatsApp message to the same number. Online
+                                    bookings are confirmed via WhatsApp within a few hours.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="appointment">
+                            <button class="faq-question">
+                                <span>Do I need a referral to see Dr. Mondal?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No, you do not need a referral. You can directly book an appointment for any of the
+                                    conditions Dr. Mondal treats. However, if you have been referred by another doctor,
+                                    please mention it during your visit as it helps in continuity of care.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="treatment">
+                            <button class="faq-question">
+                                <span>How long does a consultation typically last?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Dr. Mondal believes in thorough consultations. A first visit typically lasts 15-25
+                                    minutes, which includes detailed history taking, examination, and discussion of the
+                                    treatment plan. Follow-up visits are usually 10-15 minutes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="treatment">
+                            <button class="faq-question">
+                                <span>Does Dr. Mondal perform lab tests?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Dr. Mondal prescribes necessary laboratory investigations based on your condition and
+                                    may guide you to nearby trusted laboratories for tests like blood sugar, HbA1c,
+                                    thyroid panel, lipid profile, and other relevant investigations. Reports are
+                                    reviewed in detail during follow-up visits.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="payment">
+                            <button class="faq-question">
+                                <span>What are the consultation fees?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>For consultation fee details, please contact us at 8961355152 via phone or WhatsApp.
+                                    Fees are transparent and discussed upfront. We accept cash and UPI payments.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item scroll-reveal" data-cat="payment">
+                            <button class="faq-question">
+                                <span>What payment methods are accepted?</span>
+                                <iconify-icon icon="lucide:plus" width="20" class="faq-icon"></iconify-icon>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We accept Cash and UPI (Google Pay, PhonePe, Paytm, etc.). Please ensure you have the
+                                    payment method ready at the time of your visit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: TESTIMONIALS ===== -->
+        <section id="page-testimonials" class="page" data-page="testimonials">
+            <div class="page-hero page-hero-testimonials">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Patient Stories</span>
+                        <h1 class="page-hero-title scroll-reveal">What Patients <em>Say</em></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="testimonials-full-grid">
+                        <div class="testimonial-full-card scroll-reveal">
+                            <div class="tf-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="tf-text">"I've been seeing Dr. Mondal for my diabetes for over a year now. My
+                                HbA1c went from 9.2 to 6.8 under her care. She explains everything so clearly and
+                                adjusts medicines based on my reports. Truly grateful."</p>
+                            <div class="tf-author">
+                                <img src="https://picsum.photos/seed/test-p1/60/60.jpg" alt="Patient">
+                                <div>
+                                    <strong>Subrata Roy</strong>
+                                    <span>Diabetes Management – 1 Year</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-full-card scroll-reveal">
+                            <div class="tf-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="tf-text">"My mother was diagnosed with hypothyroidism and was very anxious. Dr.
+                                Mondal's reassuring approach and thorough explanation of the condition made all the
+                                difference. Her TSH levels are now perfectly normal."</p>
+                            <div class="tf-author">
+                                <img src="https://picsum.photos/seed/test-p2/60/60.jpg" alt="Patient">
+                                <div>
+                                    <strong>Ananya Ghosh</strong>
+                                    <span>Thyroid Disorder – 8 Months</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-full-card scroll-reveal">
+                            <div class="tf-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="tf-text">"After years of uncontrolled blood pressure and multiple doctor changes,
+                                Dr. Mondal finally got my BP under control. Her systematic approach — checking for
+                                causes, adjusting medications step by step — was exactly what I needed."</p>
+                            <div class="tf-author">
+                                <img src="https://picsum.photos/seed/test-p3/60/60.jpg" alt="Patient">
+                                <div>
+                                    <strong>Rajesh Kumar</strong>
+                                    <span>Blood Pressure – 6 Months</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-full-card scroll-reveal">
+                            <div class="tf-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="tf-text">"My chronic cough was dismissed by other doctors as allergic. Dr. Mondal,
+                                with her Harvard respiratory training, identified it as early-stage asthma and started
+                                appropriate treatment. I can now sleep through the night without coughing."</p>
+                            <div class="tf-author">
+                                <img src="https://picsum.photos/seed/test-p4/60/60.jpg" alt="Patient">
+                                <div>
+                                    <strong>Mitali Sen</strong>
+                                    <span>Respiratory Care – 4 Months</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-full-card scroll-reveal">
+                            <div class="tf-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="tf-text">"I brought my entire family to Dr. Mondal — from my father's diabetes to
+                                my daughter's recurring cold. She handles everything with such patience and expertise.
+                                She's become our family doctor."</p>
+                            <div class="tf-author">
+                                <img src="https://picsum.photos/seed/test-p5/60/60.jpg" alt="Patient">
+                                <div>
+                                    <strong>Debashis Paul</strong>
+                                    <span>Family Care – 2 Years</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-full-card scroll-reveal">
+                            <div class="tf-stars">
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                                <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                            </div>
+                            <p class="tf-text">"Had severe stomach issues for months. No doctor could figure it out. Dr.
+                                Mondal took a detailed history, ordered the right tests, and diagnosed IBS. With her
+                                treatment plan and dietary advice, I feel 90% better now."</p>
+                            <div class="tf-author">
+                                <img src="https://picsum.photos/seed/test-p6/60/60.jpg" alt="Patient">
+                                <div>
+                                    <strong>Sneha Dutta</strong>
+                                    <span>Stomach Disorder – 5 Months</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: CONTACT ===== -->
+        <section id="page-contact" class="page" data-page="contact">
+            <div class="page-hero page-hero-contact">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Get in Touch</span>
+                        <h1 class="page-hero-title scroll-reveal">Contact <em>Us</em></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-cards scroll-reveal">
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><iconify-icon icon="lucide:phone"
+                                        width="24"></iconify-icon></div>
+                                <h3>Phone</h3>
+                                <a href="tel:8961355152">8961355152</a>
+                                <p>Available during visiting hours</p>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><iconify-icon icon="lucide:message-circle"
+                                        width="24"></iconify-icon></div>
+                                <h3>WhatsApp</h3>
+                                <a href="https://wa.me/918961355152" target="_blank">Send Message</a>
+                                <p>Quick response guaranteed</p>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><iconify-icon icon="lucide:clock"
+                                        width="24"></iconify-icon></div>
+                                <h3>Visiting Hours</h3>
+                                <p>Mon, Wed, Fri</p>
+                                <p>8–10 AM | 4–6 PM</p>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-card-icon"><iconify-icon icon="lucide:shield-check"
+                                        width="24"></iconify-icon></div>
+                                <h3>Registration</h3>
+                                <p>WBMC Reg. No. 86487</p>
+                                <p>Verified Practitioner</p>
+                            </div>
+                        </div>
+                        <div class="contact-cta scroll-reveal">
+                            <div class="contact-cta-inner">
+                                <h2>Ready to Book Your Visit?</h2>
+                                <p>Schedule an appointment with Dr. Mondal through our secure online booking form. Your
+                                    health is our priority.</p>
+                                <div class="contact-cta-actions">
+                                    <a href="#appointment" class="btn btn-primary btn-lg" data-nav="appointment">
+                                        <iconify-icon icon="lucide:calendar-check" width="18"></iconify-icon>
+                                        Book Appointment
+                                    </a>
+                                    <a href="https://wa.me/918961355152" class="btn btn-outline btn-lg" target="_blank">
+                                        <iconify-icon icon="lucide:message-circle" width="18"></iconify-icon>
+                                        WhatsApp Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: PRIVACY POLICY ===== -->
+        <section id="page-privacy-policy" class="page" data-page="privacy-policy">
+            <div class="page-hero page-hero-policy">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Legal</span>
+                        <h1 class="page-hero-title scroll-reveal">Privacy <em>Policy</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Last updated: January 2026</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content scroll-reveal">
+                        <div class="policy-block">
+                            <h2>1. Information We Collect</h2>
+                            <p>We collect personal information that you voluntarily provide when using our website,
+                                including but not limited to: your name, age, gender, phone number, email address, blood
+                                group, medical history, symptoms, current medications, known allergies, and other
+                                health-related information submitted through our appointment booking form.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>2. How We Use Your Information</h2>
+                            <p>Your information is used solely for the purpose of facilitating your healthcare
+                                experience with Dr. Asmita Mondal. This includes: scheduling and confirming
+                                appointments, enabling the doctor to review your medical history prior to consultation,
+                                communicating appointment details and follow-up reminders via WhatsApp or phone, and
+                                maintaining medical records as required by law.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>3. Information Sharing</h2>
+                            <p>We do not sell, rent, or share your personal information with third parties for marketing
+                                purposes. Your medical information is shared only with Dr. Asmita Mondal and authorized
+                                clinical staff directly involved in your care. Information may be disclosed when
+                                required by law, court order, or regulatory authority.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>4. Data Security</h2>
+                            <p>We implement reasonable security measures to protect your personal information from
+                                unauthorized access, alteration, disclosure, or destruction. However, no method of
+                                transmission over the Internet or electronic storage is 100% secure, and we cannot
+                                guarantee absolute security.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>5. WhatsApp Communication</h2>
+                            <p>By using our appointment booking form, you consent to receiving communication via
+                                WhatsApp. Please note that WhatsApp messages are subject to WhatsApp's own privacy
+                                policy and end-to-end encryption policies. We recommend not sharing highly sensitive
+                                information over WhatsApp.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>6. Cookies & Analytics</h2>
+                            <p>Our website may use basic analytics to understand visitor behavior and improve the user
+                                experience. No personally identifiable information is collected through cookies. You can
+                                disable cookies in your browser settings.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>7. Your Rights</h2>
+                            <p>You have the right to request access to, correction of, or deletion of your personal
+                                information. To exercise these rights, please contact us at 8961355152. Please note that
+                                certain medical records may need to be retained as per applicable medical record
+                                retention laws.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>8. Changes to This Policy</h2>
+                            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this
+                                page with an updated "Last updated" date. Continued use of the website after changes
+                                constitutes acceptance of the updated policy.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>9. Contact</h2>
+                            <p>For any privacy-related questions or concerns, please contact us at
+                                <strong>8961355152</strong> or via WhatsApp at the same number.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: TERMS OF SERVICE ===== -->
+        <section id="page-terms" class="page" data-page="terms">
+            <div class="page-hero page-hero-policy">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Legal</span>
+                        <h1 class="page-hero-title scroll-reveal">Terms of <em>Service</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Last updated: January 2026</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content scroll-reveal">
+                        <div class="policy-block">
+                            <h2>1. Acceptance of Terms</h2>
+                            <p>By accessing and using this website, you agree to be bound by these Terms of Service. If
+                                you do not agree with any part of these terms, please do not use this website.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>2. Nature of Service</h2>
+                            <p>This website provides information about Dr. Asmita Mondal's medical practice and
+                                facilitates appointment booking. The website does not provide medical diagnosis,
+                                treatment, or advice online. All medical services are provided in-person during
+                                scheduled consultations.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>3. Appointment Booking</h2>
+                            <p>Submitting an appointment request through this website does not constitute a confirmed
+                                booking. Appointment requests are processed and confirmed via WhatsApp or phone call.
+                                The clinic reserves the right to reschedule or cancel appointments due to unforeseen
+                                circumstances.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>4. Accuracy of Information</h2>
+                            <p>You are responsible for providing accurate and complete information in the appointment
+                                form. Inaccurate information may affect the quality of healthcare you receive. The
+                                doctor reserves the right to decline consultation if critical information is found to be
+                                deliberately misrepresented.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>5. Intellectual Property</h2>
+                            <p>All content on this website, including text, images, logos, and design elements, is the
+                                intellectual property of Dr. Asmita Mondal's practice and is protected by copyright
+                                laws. Unauthorized reproduction, distribution, or use of any content is strictly
+                                prohibited.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>6. Limitation of Liability</h2>
+                            <p>The information on this website is for general informational purposes only. While we
+                                strive to keep information accurate and up-to-date, we make no representations or
+                                warranties of any kind about the completeness, accuracy, or reliability of the
+                                information provided.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>7. Third-Party Links</h2>
+                            <p>This website may contain links to third-party websites (such as WhatsApp). We are not
+                                responsible for the content, privacy policies, or practices of third-party websites.
+                                Accessing third-party links is at your own risk.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>8. Governing Law</h2>
+                            <p>These Terms of Service shall be governed by and construed in accordance with the laws of
+                                India. Any disputes arising from these terms shall be subject to the exclusive
+                                jurisdiction of the courts of Kolkata, West Bengal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: DISCLAIMER ===== -->
+        <section id="page-disclaimer" class="page" data-page="disclaimer">
+            <div class="page-hero page-hero-policy">
+                <div class="page-hero-bg"></div>
+                <div class="container">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag scroll-reveal">Legal</span>
+                        <h1 class="page-hero-title scroll-reveal"><em>Disclaimer</em></h1>
+                        <p class="page-hero-subtitle scroll-reveal">Important information about this website</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="policy-content scroll-reveal">
+                        <div class="policy-block">
+                            <h2>Medical Disclaimer</h2>
+                            <p>The information provided on this website is for general informational and educational
+                                purposes only. It is not intended to be a substitute for professional medical advice,
+                                diagnosis, or treatment. Always seek the advice of your physician or other qualified
+                                health provider with any questions you may have regarding a medical condition.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>No Online Consultation</h2>
+                            <p>This website does not provide online medical consultations. Dr. Asmita Mondal provides
+                                medical services exclusively through in-person consultations at the clinic during
+                                scheduled visiting hours. Any communication via WhatsApp or phone is limited to
+                                appointment scheduling and general inquiries only.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>Individual Results May Vary</h2>
+                            <p>Testimonials and success stories shared on this website represent individual experiences
+                                and results. Medical outcomes vary from patient to patient based on numerous factors
+                                including the nature of the condition, patient compliance, genetics, and other
+                                variables. These testimonials should not be interpreted as guaranteed results.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>Emergency Warning</h2>
+                            <p>This website is NOT for medical emergencies. If you are experiencing a medical emergency
+                                (chest pain, severe breathing difficulty, loss of consciousness, severe bleeding, etc.),
+                                please call emergency services immediately (108) or visit the nearest hospital emergency
+                                department.</p>
+                        </div>
+                        <div class="policy-block">
+                            <h2>Information Accuracy</h2>
+                            <p>While we make every effort to ensure that the information on this website is accurate and
+                                up-to-date, medical knowledge is constantly evolving. Dr. Mondal's clinical decisions
+                                are based on the latest available evidence at the time of your consultation, which may
+                                differ from information published on this website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-mark">
+                            <iconify-icon icon="lucide:stethoscope" width="20"></iconify-icon>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">Dr. Asmita Mondal</span>
+                            <span class="logo-sub">MBBS, CCEBDM</span>
+                        </div>
+                    </div>
+                    <p class="footer-brand-desc">General Physician & Diabetologist offering compassionate,
+                        evidence-based healthcare in Kolkata. Harvard-certified in Respiratory Diseases.</p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link" aria-label="Facebook"><iconify-icon
+                                icon="lucide:facebook" width="18"></iconify-icon></a>
+                        <a href="#" class="footer-social-link" aria-label="Instagram"><iconify-icon
+                                icon="lucide:instagram" width="18"></iconify-icon></a>
+                        <a href="#" class="footer-social-link" aria-label="LinkedIn"><iconify-icon
+                                icon="lucide:linkedin" width="18"></iconify-icon></a>
+                        <a href="https://wa.me/918961355152" class="footer-social-link" aria-label="WhatsApp"
+                            target="_blank"><iconify-icon icon="lucide:message-circle" width="18"></iconify-icon></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-nav="home">Home</a></li>
+                        <li><a href="#about" data-nav="about">About</a></li>
+                        <li><a href="#services" data-nav="services">Services</a></li>
+                        <li><a href="#appointment" data-nav="appointment">Appointment</a></li>
+                        <li><a href="#contact" data-nav="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#diabetes" data-nav="diabetes">Diabetes</a></li>
+                        <li><a href="#blood-pressure" data-nav="blood-pressure">Blood Pressure</a></li>
+                        <li><a href="#thyroid" data-nav="thyroid">Thyroid</a></li>
+                        <li><a href="#respiratory" data-nav="respiratory">Respiratory</a></li>
+                        <li><a href="#general-medicine" data-nav="general-medicine">General Medicine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy-policy" data-nav="privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#terms" data-nav="terms">Terms of Service</a></li>
+                        <li><a href="#disclaimer" data-nav="disclaimer">Disclaimer</a></li>
+                    </ul>
+                    <h4 class="footer-contact-heading">Contact</h4>
+                    <ul class="footer-contact-list">
+                        <li><a href="tel:8961355152"><iconify-icon icon="lucide:phone" width="14"></iconify-icon>
+                                8961355152</a></li>
+                        <li><a href="https://wa.me/918961355152" target="_blank"><iconify-icon
+                                    icon="lucide:message-circle" width="14"></iconify-icon> WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Asmita Mondal. All rights reserved. WBMC Reg. No. 86487</p>
+                <p class="footer-bottom-sub">Healing with Compassion</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WIDGETS ========== -->
+    <div class="floating-widgets" id="floating-widgets">
+        <button class="floating-widget floating-back-to-top" id="back-to-top" aria-label="Back to top">
+            <iconify-icon icon="lucide:chevron-up" width="22"></iconify-icon>
+        </button>
+        <button class="floating-widget floating-appointment" id="floating-appointment-btn"
+            aria-label="Book Appointment">
+            <iconify-icon icon="lucide:calendar-check" width="22"></iconify-icon>
+            <span class="floating-widget-tooltip">Book Appointment</span>
+        </button>
+        <a href="https://wa.me/918961355152" class="floating-widget floating-whatsapp" id="floating-whatsapp-btn"
+            target="_blank" aria-label="WhatsApp">
+            <iconify-icon icon="lucide:message-circle" width="22"></iconify-icon>
+            <span class="floating-widget-tooltip">Chat on WhatsApp</span>
+            <span class="whatsapp-pulse"></span>
+        </a>
+    </div>
+
+    <!-- ========== TOAST NOTIFICATION ========== -->
+    <div id="toast" class="toast">
+        <div class="toast-icon"><iconify-icon icon="lucide:check-circle-2" width="20"></iconify-icon></div>
+        <div class="toast-content">
+            <span class="toast-title">Success</span>
+            <span class="toast-message">Appointment request sent via WhatsApp!</span>
+        </div>
+        <button class="toast-close" id="toast-close"><iconify-icon icon="lucide:x" width="16"></iconify-icon></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

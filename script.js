@@ -247,20 +247,45 @@
     DOM.mobileNavClose.addEventListener("click", closeMobileMenu);
 
     // Mobile submenu toggles
+    // document
+    //   .querySelectorAll(".mobile-has-submenu > .mobile-nav-link")
+    //   .forEach((link) => {
+    //     link.addEventListener("click", (e) => {
+    //       const parent = link.parentElement;
+    //       const isAlreadyOpen = parent.classList.contains("open");
+    //       // Close all other submenus
+    //       document
+    //         .querySelectorAll(".mobile-has-submenu.open")
+    //         .forEach((item) => {
+    //           item.classList.remove("open");
+    //         });
+    //       if (!isAlreadyOpen) {
+    //         e.preventDefault();
+    //         parent.classList.add("open");
+    //       }
+    //     });
+    //   });
+
+    // Mobile submenu toggles
     document
       .querySelectorAll(".mobile-has-submenu > .mobile-nav-link")
       .forEach((link) => {
         link.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation(); // ✅ Stop global nav handler from hijacking this click
+
           const parent = link.parentElement;
           const isAlreadyOpen = parent.classList.contains("open");
+
           // Close all other submenus
           document
             .querySelectorAll(".mobile-has-submenu.open")
             .forEach((item) => {
               item.classList.remove("open");
             });
+
+          // Toggle this submenu
           if (!isAlreadyOpen) {
-            e.preventDefault();
             parent.classList.add("open");
           }
         });

@@ -318,7 +318,7 @@ strong {
     0 2px 12px rgba(11, 94, 79, 0.2);
 }
 
-.btn-primary::before {
+/* .btn-primary::before {
   background: linear-gradient(
     135deg,
     var(--primary-light),
@@ -334,11 +334,45 @@ strong {
   color: var(--text-on-primary);
 }
 
+
 .btn-primary:hover::before {
   opacity: 1;
 }
 
 .btn-primary:active {
+  transform: translateY(0);
+} */
+
+/* ✅ Disable ::before overlay — it was covering text on hover */
+.btn-primary::before {
+  display: none;
+}
+
+/* ✅ a.btn-primary beats global a:hover specificity (0-3-1 vs 0-1-1) */
+a.btn-primary:hover,
+button.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-dark)
+  );
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow:
+    var(--shadow-md),
+    0 4px 20px rgba(11, 94, 79, 0.3);
+}
+
+/* ✅ Force white on icon + span children inside button */
+a.btn-primary:hover iconify-icon,
+button.btn-primary:hover iconify-icon,
+a.btn-primary:hover span,
+button.btn-primary:hover span {
+  color: var(--white);
+}
+
+a.btn-primary:active,
+button.btn-primary:active {
   transform: translateY(0);
 }
 
@@ -866,10 +900,20 @@ body:hover .cursor-dot {
   color: var(--primary);
 }
 
-.header-cta {
+/* .header-cta {
   position: relative;
   z-index: 2;
+} 
+koushik */
+
+/* .header-cta:hover {
+  color: var(--white) !important;
 }
+
+.header-cta:hover span,
+.header-cta:hover iconify-icon {
+  color: var(--white) !important;
+} */
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
@@ -3954,7 +3998,7 @@ body:hover .cursor-dot {
   }
 
   .hero-image-wrapper {
-    max-width: 260px;
+    max-width: 380px;
   }
 
   /* ✅ Remove the border accent on mobile — causes the ugly border frame */
@@ -3966,7 +4010,7 @@ body:hover .cursor-dot {
   .hero-image-frame {
     aspect-ratio: unset;
     height: auto;
-    max-height: 420px;
+    max-height: 560px;
   }
 
   .hero-image {
@@ -4154,11 +4198,11 @@ body:hover .cursor-dot {
   }
 
   .hero-image-wrapper {
-    max-width: 220px;
+    max-width: 300px;
   }
 
   .hero-image-frame {
-    max-height: 340px;
+    max-height: 480px;
   }
 
   .hero-stats {

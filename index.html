@@ -1,2060 +1,739 @@
-<!doctype html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Dr. Hakam Singh — Consultant Orthopaedic Surgeon & Sports Injury Specialist. Specializing in Arthroscopy, Sports Medicine, Joint Replacement, and Trauma Care. Book your consultation today." />
-    <meta name="keywords"
-        content="orthopedic surgeon, sports injury specialist, arthroscopy, ACL reconstruction, knee surgery, rotator cuff repair, meniscus repair, Dr Hakam Singh, orthopaedic Ludhiana" />
-    <title>Dr. Hakam Singh | Consultant Orthopaedic Surgeon & Sports Injury Specialist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroceryList Pro — Premium Grocery List Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { inter: ["Inter", "sans-serif"] },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-white text-slate-800 antialiased">
+<body class="font-body">
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ==================== NAVIGATION ==================== -->
-    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-[300] nav-glass">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between h-20">
-                <a href="#home" onclick="nav('home')" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-xl flex items-center justify-center shadow-lg transition-shadow"
-                        style="background:var(--primary-600);box-shadow:0 8px 16px rgba(37,99,235,0.25)">
-                        <i data-lucide="bone" class="w-5 h-5 text-white"></i>
+    <!-- Loading Splash -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="splash-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h1 class="splash-title font-display">GroceryList Pro</h1>
+            <p class="splash-subtitle">Loading your premium experience...</p>
+            <div class="splash-loader">
+                <div class="splash-loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="app-header" class="app-header">
+        <div class="header-top">
+            <div class="header-brand">
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="brand-logo">
+                    <i class="fas fa-leaf brand-icon"></i>
+                    <div class="brand-text">
+                        <h1 class="brand-name font-display">GroceryList Pro</h1>
+                        <span class="brand-tagline">Premium List Creator</span>
                     </div>
-                    <div class="flex flex-col leading-none">
-                        <span class="text-base font-bold tracking-tight nav-text-c">Dr. Hakam Singh</span>
-                        <span
-                            class="text-[10px] font-medium tracking-widest uppercase nav-sub-c opacity-60 nav-text-c">Orthopaedic
-                            & Sports Injury</span>
-                    </div>
-                </a>
-                <div class="hidden lg:flex items-center gap-1">
-                    <a href="#home" onclick="nav('home')"
-                        class="nav-link-t px-3.5 py-2 text-sm rounded-lg transition-colors">Home</a>
-                    <a href="#about" onclick="nav('about')"
-                        class="nav-link-t px-3.5 py-2 text-sm rounded-lg transition-colors">About</a>
-                    <div class="dropdown relative">
-                        <button
-                            class="nav-link-t px-3.5 py-2 text-sm rounded-lg transition-colors flex items-center gap-1">Services
-                            <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></button>
-                        <div class="dd-menu absolute top-full left-0 pt-2" style="z-index:var(--z-dropdown)">
-                            <div class="bg-white rounded-xl shadow-xl border p-2 min-w-[220px]"
-                                style="border-color:var(--slate-100)">
-                                <a href="#specializations" onclick="nav('specializations')"
-                                    class="flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
-                                    style="color:var(--slate-700)"
-                                    onmouseover="this.style.background='var(--primary-50)'"
-                                    onmouseout="this.style.background='transparent'"><i data-lucide="stethoscope"
-                                        class="w-4 h-4" style="color:var(--primary-500)"></i><span
-                                        class="text-sm font-medium">Specializations</span></a>
-                                <a href="#conditions" onclick="nav('conditions')"
-                                    class="flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
-                                    style="color:var(--slate-700)"
-                                    onmouseover="this.style.background='var(--primary-50)'"
-                                    onmouseout="this.style.background='transparent'"><i data-lucide="heart-pulse"
-                                        class="w-4 h-4" style="color:var(--primary-500)"></i><span
-                                        class="text-sm font-medium">Conditions</span></a>
-                                <a href="#procedures" onclick="nav('procedures')"
-                                    class="flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors"
-                                    style="color:var(--slate-700)"
-                                    onmouseover="this.style.background='var(--primary-50)'"
-                                    onmouseout="this.style.background='transparent'"><i data-lucide="scissors"
-                                        class="w-4 h-4" style="color:var(--primary-500)"></i><span
-                                        class="text-sm font-medium">Procedures</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="#blog" onclick="nav('blog')"
-                        class="nav-link-t px-3.5 py-2 text-sm rounded-lg transition-colors">Blog</a>
-                    <a href="#testimonials" onclick="nav('testimonials')"
-                        class="nav-link-t px-3.5 py-2 text-sm rounded-lg transition-colors">Testimonials</a>
-                    <a href="#faq" onclick="nav('faq')"
-                        class="nav-link-t px-3.5 py-2 text-sm rounded-lg transition-colors">FAQ</a>
-                    <a href="#contact" onclick="nav('contact')"
-                        class="ml-2 text-white px-5 py-2.5 text-sm font-semibold rounded-xl transition-all hover:shadow-lg"
-                        style="background:var(--primary-600)"
-                        onmouseover="this.style.background='var(--primary-700)';this.style.boxShadow='0 8px 24px rgba(37,99,235,0.25)'"
-                        onmouseout="this.style.background='var(--primary-600)';this.style.boxShadow='none'">Book
-                        Appointment</a>
                 </div>
-                <button onclick="toggleMobile()" class="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
-                    <i data-lucide="menu" class="w-6 h-6 nav-icon-c"></i>
+            </div>
+            <div class="header-meta">
+                <div class="meta-input-group">
+                    <label for="user-name" class="meta-label"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="user-name" class="meta-input" placeholder="Enter your name" maxlength="50">
+                </div>
+                <div class="meta-input-group">
+                    <label for="store-name" class="meta-label"><i class="fas fa-store"></i> Store Name</label>
+                    <input type="text" id="store-name" class="meta-input" placeholder="Enter store name" maxlength="60">
+                </div>
+                <div class="meta-input-group">
+                    <label for="shopping-date" class="meta-label"><i class="fas fa-calendar"></i> Date</label>
+                    <input type="date" id="shopping-date" class="meta-input">
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="btn-undo" class="header-btn" title="Undo (Ctrl+Z)" aria-label="Undo">
+                    <i class="fas fa-undo"></i>
+                </button>
+                <button id="btn-redo" class="header-btn" title="Redo (Ctrl+Y)" aria-label="Redo">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="btn-theme" class="header-btn" title="Toggle theme" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button id="btn-settings" class="header-btn" title="Settings" aria-label="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button id="btn-shortcuts" class="header-btn" title="Keyboard shortcuts"
+                    aria-label="Keyboard shortcuts">
+                    <i class="fas fa-keyboard"></i>
+                </button>
+                <select id="language-select" class="language-select" title="Change language" aria-label="Language">
+                    <option value="en">EN</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="bn">বাংলা</option>
+                </select>
+                <button id="btn-whatsapp" class="header-btn whatsapp-header-btn" title="Share via WhatsApp"
+                    aria-label="Share via WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+                <div class="header-btn-divider"></div>
+                <button id="btn-save" class="header-btn-primary" title="Save list (Ctrl+S)">
+                    <i class="fas fa-save"></i> <span class="btn-label">Save</span>
+                </button>
+                <button id="btn-export" class="header-btn-accent" title="Export list (Ctrl+E)">
+                    <i class="fas fa-file-export"></i> <span class="btn-label">Export</span>
                 </button>
             </div>
         </div>
-    </nav>
-
-    <!-- ==================== MOBILE MENU ==================== -->
-    <div id="mobileOverlay" class="mobile-overlay fixed inset-0 bg-black/40" style="z-index:var(--z-mobile-menu)"
-        onclick="toggleMobile()"></div>
-    <div id="mobileMenu"
-        class="mobile-menu fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white overflow-y-auto shadow-2xl"
-        style="z-index:var(--z-mobile-menu)">
-        <div class="p-6">
-            <div class="flex items-center justify-between mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-lg flex items-center justify-center"
-                        style="background:var(--primary-600)"><i data-lucide="bone" class="w-4 h-4 text-white"></i>
-                    </div><span class="font-bold" style="color:var(--slate-800)">Dr. Hakam Singh</span>
+        <!-- Summary Bar -->
+        <div class="summary-bar">
+            <div class="summary-item">
+                <span class="summary-icon"><i class="fas fa-check-circle"></i></span>
+                <span class="summary-label">Selected:</span>
+                <span class="summary-value" id="summary-selected">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-icon"><i class="fas fa-list"></i></span>
+                <span class="summary-label">Total Items:</span>
+                <span class="summary-value" id="summary-total">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-icon"><i class="fas fa-layer-group"></i></span>
+                <span class="summary-label">Categories:</span>
+                <span class="summary-value" id="summary-categories">0</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-icon"><i class="fas fa-star"></i></span>
+                <span class="summary-label">Starred:</span>
+                <span class="summary-value" id="summary-starred">0</span>
+            </div>
+            <div class="summary-progress-wrap">
+                <div class="summary-progress-label">Progress</div>
+                <div class="summary-progress-bar">
+                    <div class="summary-progress-fill" id="summary-progress-fill"></div>
                 </div>
-                <button onclick="toggleMobile()" class="p-2 rounded-lg" style="background:var(--slate-100)"><i
-                        data-lucide="x" class="w-5 h-5"></i></button>
+                <span class="summary-progress-pct" id="summary-progress-pct">0%</span>
             </div>
-            <div class="space-y-1" id="mobLinks">
-                <a href="#home" onclick="nav('home');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">Home</a>
-                <a href="#about" onclick="nav('about');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">About</a>
-                <a href="#specializations" onclick="nav('specializations');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg"
-                    style="color:var(--slate-700)">Specializations</a>
-                <a href="#conditions" onclick="nav('conditions');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">Conditions
-                    Treated</a>
-                <a href="#procedures" onclick="nav('procedures');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">Procedures</a>
-                <a href="#blog" onclick="nav('blog');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">Blog</a>
-                <a href="#testimonials" onclick="nav('testimonials');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg"
-                    style="color:var(--slate-700)">Testimonials</a>
-                <a href="#faq" onclick="nav('faq');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">FAQ</a>
-                <a href="#contact" onclick="nav('contact');toggleMobile()"
-                    class="block px-4 py-3 text-sm font-medium rounded-lg" style="color:var(--slate-700)">Contact</a>
+            <div class="summary-actions">
+                <button id="btn-shopping-mode" class="shopping-mode-btn" title="Enter shopping mode">
+                    <i class="fas fa-shopping-cart"></i> Shopping Mode
+                </button>
+                <button id="btn-saved-lists" class="saved-lists-btn" title="View saved lists">
+                    <i class="fas fa-folder-open"></i> Saved Lists
+                </button>
+                <button id="btn-templates" class="templates-btn" title="Load template">
+                    <i class="fas fa-magic"></i> Templates
+                </button>
+                <button id="btn-stats" class="stats-btn" title="View statistics">
+                    <i class="fas fa-chart-bar"></i> Stats
+                </button>
             </div>
-            <div class="mt-6"><a href="#contact" onclick="nav('contact');toggleMobile()"
-                    class="block w-full text-white text-center px-5 py-3 text-sm font-semibold rounded-xl"
-                    style="background:var(--primary-600)">Book Appointment</a></div>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="app-layout" id="main-content">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar" aria-label="Category sidebar">
+            <div class="sidebar-search">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search items..."
+                        aria-label="Search items">
+                    <button id="search-clear" class="search-clear hidden" aria-label="Clear search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Categories</h3>
+                <div id="category-list" class="category-list">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Filters</h3>
+                <div class="filter-group">
+                    <label class="filter-label">Priority</label>
+                    <select id="filter-priority" class="filter-select">
+                        <option value="all">All Priorities</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Status</label>
+                    <select id="filter-status" class="filter-select">
+                        <option value="all">All Items</option>
+                        <option value="checked">Checked Only</option>
+                        <option value="unchecked">Unchecked Only</option>
+                        <option value="starred">Starred Only</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Sort By</label>
+                    <select id="sort-by" class="filter-select">
+                        <option value="category">Category Order</option>
+                        <option value="name-asc">Name A-Z</option>
+                        <option value="name-desc">Name Z-A</option>
+                        <option value="priority">Priority (High First)</option>
+                        <option value="checked">Checked First</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Quick Actions</h3>
+                <div class="quick-actions">
+                    <button id="btn-select-all" class="quick-action-btn">
+                        <i class="fas fa-check-double"></i> Select All
+                    </button>
+                    <button id="btn-deselect-all" class="quick-action-btn">
+                        <i class="fas fa-times-circle"></i> Deselect All
+                    </button>
+                    <button id="btn-expand-all" class="quick-action-btn">
+                        <i class="fas fa-expand-alt"></i> Expand All
+                    </button>
+                    <button id="btn-collapse-all" class="quick-action-btn">
+                        <i class="fas fa-compress-alt"></i> Collapse All
+                    </button>
+                    <button id="btn-clear-amounts" class="quick-action-btn">
+                        <i class="fas fa-eraser"></i> Clear Amounts
+                    </button>
+                    <button id="btn-reset-defaults" class="quick-action-btn danger">
+                        <i class="fas fa-rotate-left"></i> Reset Defaults
+                    </button>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Add Custom Item</h3>
+                <button id="btn-add-custom" class="add-custom-btn">
+                    <i class="fas fa-plus-circle"></i> Add New Item
+                </button>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Import</h3>
+                <label class="import-btn" for="import-file">
+                    <i class="fas fa-file-import"></i> Import JSON
+                </label>
+                <input type="file" id="import-file" accept=".json" class="hidden">
+            </div>
+        </aside>
+
+        <!-- Sidebar Overlay (Mobile) -->
+        <div id="sidebar-overlay" class="sidebar-overlay hidden"></div>
+
+        <!-- Main Content -->
+        <main id="main-list" class="main-content" role="main">
+            <div id="items-container" class="items-container">
+                <!-- Populated by JS -->
+            </div>
+            <div id="empty-state" class="empty-state hidden">
+                <i class="fas fa-search"></i>
+                <h3>No items found</h3>
+                <p>Try adjusting your search or filters</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Shopping Mode Overlay -->
+    <div id="shopping-overlay" class="shopping-overlay hidden">
+        <div class="shopping-header">
+            <h2 class="shopping-title font-display"><i class="fas fa-shopping-cart"></i> Shopping Mode</h2>
+            <div class="shopping-progress">
+                <span id="shopping-count">0 / 0</span>
+                <div class="shopping-progress-bar">
+                    <div class="shopping-progress-fill" id="shopping-progress-fill"></div>
+                </div>
+            </div>
+            <button id="btn-close-shopping" class="shopping-close-btn">
+                <i class="fas fa-times"></i> Exit
+            </button>
+        </div>
+        <div id="shopping-list" class="shopping-list">
+            <!-- Populated by JS -->
+        </div>
+        <div id="shopping-complete" class="shopping-complete hidden">
+            <div class="shopping-complete-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Shopping Complete!</h2>
+                <p>All items have been checked off your list.</p>
+                <button id="btn-exit-shopping" class="header-btn-accent">Back to Editor</button>
+            </div>
         </div>
     </div>
 
-    <!-- ==================== PAGE: HOME ==================== -->
-    <div id="page-home" class="page-section active">
-        <!-- Hero -->
-        <section class="hero-med relative min-h-screen flex items-center overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="hero-blur-orb hero-blur-orb-2"></div>
-            <div class="hero-blur-orb hero-blur-orb-3"></div>
-            <div class="max-w-7xl mx-auto px-6 pt-32 pb-20 relative z-10 w-full">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <div class="sec-label mb-8 reveal">
-                            <span class="w-2 h-2 rounded-full pulse-ring" style="background:var(--primary-500)"></span>
-                            Orthopaedic & Sports Injury Specialist
-                        </div>
-                        <h1
-                            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.08] tracking-tight mb-6 reveal reveal-d1">
-                            Dr. Hakam <span class="grad-text">Singh</span>
-                        </h1>
-                        <p class="text-lg text-slate-300 leading-relaxed max-w-lg mb-8 reveal reveal-d2">
-                            MBBS, MS (Orthopedics), Fellowship in Arthroscopy & Sports Medicine (Ortho One,
-                            Coimbatore). Precision orthopedic care with compassion and cutting-edge technology.
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-12 reveal reveal-d3">
-                            <a href="#" onclick="openBookingModal();return false;"
-                                class="text-white px-7 py-4 text-sm font-semibold rounded-xl transition-all flex items-center gap-2"
-                                style="background:var(--primary-600)"
-                                onmouseover="this.style.background='var(--primary-700)';this.style.boxShadow='0 16px 40px rgba(37,99,235,0.2)'"
-                                onmouseout="this.style.background='var(--primary-600)';this.style.boxShadow='none'">Book
-                                Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                            <a href="#about" onclick="nav('about')"
-                                class="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-7 py-4 text-sm font-semibold rounded-xl transition-all backdrop-blur-sm">Learn
-                                More</a>
-                        </div>
-                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 reveal reveal-d4">
-                            <div>
-                                <p class="text-3xl font-bold text-white stat-num" data-target="8" data-suffix="+">0</p>
-                                <p class="text-xs text-slate-400 mt-1">Years Experience</p>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-bold text-white stat-num" data-target="999" data-suffix="+">0
+    <!-- Modals -->
+    <!-- Export Modal -->
+    <div id="modal-export" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="export-modal-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="export-modal-title" class="modal-title font-display"><i class="fas fa-file-export"></i> Export
+                    List</h2>
+                <button class="modal-close" data-modal="modal-export" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Select a format to export your grocery list.</p>
+                <div class="export-options">
+                    <label class="export-option-card">
+                        <input type="radio" name="export-format" value="pdf" checked>
+                        <div class="export-option-content">
+                            <div class="export-option-icon pdf"><i class="fas fa-file-pdf"></i></div>
+                            <div class="export-option-info">
+                                <h4>PDF Document</h4>
+                                <p>Professional formatted document with page numbers, headers, and clean table layout.
                                 </p>
-                                <p class="text-xs text-slate-400 mt-1">Surgeries Done</p>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-bold text-white stat-num" data-target="98" data-suffix="%">0</p>
-                                <p class="text-xs text-slate-400 mt-1">Success Rate</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- <div class="hidden lg:flex justify-center reveal reveal-d3">  koushik1-->
-                    <div class="flex justify-center reveal reveal-d3 mt-10 lg:mt-0">
-                        <!-- <div class="doctor-blur-card w-[340px] h-[460px] float-y shadow-2xl">  koushik1-->
-                        <div
-                            class="doctor-blur-card w-[260px] h-[350px] sm:w-[300px] sm:h-[400px] lg:w-[340px] lg:h-[460px] float-y shadow-2xl">
-                            <img src="https://chauhanmedicity.com/wp-content/uploads/2023/01/Dr.-Hakam-Singh-1.jpg"
-                                alt="Dr. Hakam Singh - Orthopaedic Surgeon" />
-                            <div class="card-content">
-                                <!-- <p class="text-white font-bold text-lg">Dr. Hakam Singh</p>
-                                <p class="text-slate-300 text-sm">MS Ortho | Fellowship Arthroscopy & Sports
-                                    Medicine</p>
-                                <div class="flex gap-2 mt-3">
-                                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-sm"
-                                        style="background:rgba(59,130,246,0.3);color:#93c5fd;border-color:rgba(96,165,250,0.3)">ARTHROSCOPY</span>
-                                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-sm"
-                                        style="background:rgba(20,184,166,0.3);color:#5eead4;border-color:rgba(45,212,191,0.3)">SPORTS
-                                        MEDICINE</span>  koushik1-->
-                                <p class="text-white font-bold text-sm sm:text-lg">Dr. Hakam Singh</p>
-                                <p class="text-slate-300 text-xs sm:text-sm">MS Ortho | Fellowship Arthroscopy & Sports
-                                    Medicine</p>
-                                <div class="flex gap-1.5 sm:gap-2 mt-2 sm:mt-3 flex-wrap">
-                                    <span
-                                        class="text-[8px] sm:text-[10px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border backdrop-blur-sm"
-                                        style="background:rgba(59,130,246,0.3);color:#93c5fd;border-color:rgba(96,165,250,0.3)">ARTHROSCOPY</span>
-                                    <span
-                                        class="text-[8px] sm:text-[10px] font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border backdrop-blur-sm"
-                                        style="background:rgba(20,184,166,0.3);color:#5eead4;border-color:rgba(45,212,191,0.3)">SPORTS
-                                        MEDICINE</span>
-                                </div>
+                    </label>
+                    <label class="export-option-card">
+                        <input type="radio" name="export-format" value="csv">
+                        <div class="export-option-content">
+                            <div class="export-option-icon csv"><i class="fas fa-file-csv"></i></div>
+                            <div class="export-option-info">
+                                <h4>CSV Spreadsheet</h4>
+                                <p>Comma-separated values file, compatible with Excel, Google Sheets, and other
+                                    spreadsheet apps.</p>
                             </div>
                         </div>
-                    </div>
+                    </label>
+                    <label class="export-option-card">
+                        <input type="radio" name="export-format" value="json">
+                        <div class="export-option-content">
+                            <div class="export-option-icon json"><i class="fas fa-file-code"></i></div>
+                            <div class="export-option-info">
+                                <h4>JSON Data</h4>
+                                <p>Structured data format for backup, sharing, or importing back into GroceryList Pro.
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div id="export-options-extra" class="export-extra">
+                    <label class="export-checkbox">
+                        <input type="checkbox" id="export-checked-only" checked>
+                        <span>Export checked items only</span>
+                    </label>
+                    <label class="export-checkbox">
+                        <input type="checkbox" id="export-group-category" checked>
+                        <span>Group by category</span>
+                    </label>
+                    <label class="export-checkbox">
+                        <input type="checkbox" id="export-include-header" checked>
+                        <span>Include name, store, date in header</span>
+                    </label>
                 </div>
             </div>
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-                <span class="text-[10px] text-slate-500 tracking-widest uppercase">Scroll</span><i
-                    data-lucide="chevron-down" class="w-4 h-4 text-slate-500"></i>
-            </div>
-        </section>
-
-        <!-- Specialties Overview -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                    <span class="sec-label mb-6 inline-block"><span class="w-2 h-2 rounded-full"
-                            style="background:var(--primary-500)"></span> Expertise</span>
-                    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4" style="color:var(--slate-900)">Areas
-                        of Specialization</h2>
-                    <p style="color:var(--slate-500)">Comprehensive orthopedic care with expertise in arthroscopy,
-                        sports medicine, and joint replacement.</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="med-card p-7 reveal reveal-d1">
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                            style="background:var(--primary-50)"><i data-lucide="scan" class="w-6 h-6"
-                                style="color:var(--primary-600)"></i></div>
-                        <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Arthroscopy</h3>
-                        <p class="text-sm leading-relaxed" style="color:var(--slate-500)">Advanced keyhole surgery for
-                            ACL reconstruction, meniscus repair, rotator cuff repair, and cartilage restoration using
-                            state-of-the-art arthroscopic techniques.</p><a href="#specializations"
-                            onclick="nav('specializations')"
-                            class="text-sm font-semibold flex items-center gap-1 mt-4 transition-all"
-                            style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                            onmouseout="this.style.gap='4px'">Learn more <i data-lucide="arrow-right"
-                                class="w-3.5 h-3.5"></i></a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d2">
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                            style="background:var(--accent-50)"><i data-lucide="activity" class="w-6 h-6"
-                                style="color:var(--accent-600)"></i></div>
-                        <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Sports Injury
-                            Management</h3>
-                        <p class="text-sm leading-relaxed" style="color:var(--slate-500)">Comprehensive management of
-                            sports-related injuries including ligament tears, meniscus injuries, tendon problems, and
-                            return-to-sport protocols.</p><a href="#specializations" onclick="nav('specializations')"
-                            class="text-sm font-semibold flex items-center gap-1 mt-4 transition-all"
-                            style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                            onmouseout="this.style.gap='4px'">Learn more <i data-lucide="arrow-right"
-                                class="w-3.5 h-3.5"></i></a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d3">
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                            style="background:var(--primary-50)"><i data-lucide="circle-dot" class="w-6 h-6"
-                                style="color:var(--primary-600)"></i></div>
-                        <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Joint Replacement</h3>
-                        <p class="text-sm leading-relaxed" style="color:var(--slate-500)">Total and partial knee and hip
-                            replacement using modern implants and minimally invasive techniques for faster recovery and
-                            better outcomes.</p><a href="#specializations" onclick="nav('specializations')"
-                            class="text-sm font-semibold flex items-center gap-1 mt-4 transition-all"
-                            style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                            onmouseout="this.style.gap='4px'">Learn more <i data-lucide="arrow-right"
-                                class="w-3.5 h-3.5"></i></a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d1">
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                            style="background:#fff7ed"><i data-lucide="align-center-vertical" class="w-6 h-6"
-                                style="color:#ea580c"></i></div>
-                        <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Spine Surgery</h3>
-                        <p class="text-sm leading-relaxed" style="color:var(--slate-500)">Disc herniation, spinal
-                            stenosis, and degenerative spine disease management with modern minimally invasive
-                            surgical techniques.</p><a href="#conditions" onclick="nav('conditions')"
-                            class="text-sm font-semibold flex items-center gap-1 mt-4 transition-all"
-                            style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                            onmouseout="this.style.gap='4px'">Learn more <i data-lucide="arrow-right"
-                                class="w-3.5 h-3.5"></i></a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d2">
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                            style="background:#f3e8ff"><i data-lucide="bone" class="w-6 h-6" style="color:#7c3aed"></i>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Trauma & Fracture Care</h3>
-                        <p class="text-sm leading-relaxed" style="color:var(--slate-500)">Expert management of complex
-                            fractures, dislocations, and polytrauma using locking plates, intramedullary nails, and
-                            modern fixation techniques.</p><a href="#conditions" onclick="nav('conditions')"
-                            class="text-sm font-semibold flex items-center gap-1 mt-4 transition-all"
-                            style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                            onmouseout="this.style.gap='4px'">Learn more <i data-lucide="arrow-right"
-                                class="w-3.5 h-3.5"></i></a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d3">
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                            style="background:var(--accent-50)"><i data-lucide="baby" class="w-6 h-6"
-                                style="color:var(--accent-600)"></i></div>
-                        <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Pediatric Orthopedics</h3>
-                        <p class="text-sm leading-relaxed" style="color:var(--slate-500)">Congenital deformities, growth
-                            disorders, and pediatric fractures treated with gentle, child-friendly approaches that
-                            preserve growth potential.</p><a href="#conditions" onclick="nav('conditions')"
-                            class="text-sm font-semibold flex items-center gap-1 mt-4 transition-all"
-                            style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                            onmouseout="this.style.gap='4px'">Learn more <i data-lucide="arrow-right"
-                                class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose -->
-        <section class="py-20" style="background:var(--slate-50)">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="reveal">
-                        <span class="sec-label mb-6 inline-block"><span class="w-2 h-2 rounded-full"
-                                style="background:var(--primary-500)"></span> Why Choose</span>
-                        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-6" style="color:var(--slate-900)">
-                            Why Patients Trust Dr. Hakam Singh</h2>
-                        <p class="leading-relaxed mb-8" style="color:var(--slate-500)">Trained at premier
-                            institutions including GMC Amritsar, DMC Ludhiana, and Ortho One Coimbatore — one of
-                            India's leading sports medicine centers. Every treatment plan is tailored to your unique
-                            needs and activity goals.</p>
-                        <div class="space-y-5">
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--primary-100)"><i data-lucide="award" class="w-5 h-5"
-                                        style="color:var(--primary-600)"></i></div>
-                                <div>
-                                    <h4 class="font-semibold text-sm mb-1" style="color:var(--slate-900)">
-                                        Superspecialisation
-                                        in Arthroscopy & Sports Medicine</h4>
-                                    <p class="text-sm" style="color:var(--slate-500)">Fellowship-trained at Ortho One
-                                        Hospital, Coimbatore — a nationally renowned sports medicine center.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--accent-100)"><i data-lucide="cpu" class="w-5 h-5"
-                                        style="color:var(--accent-600)"></i></div>
-                                <div>
-                                    <h4 class="font-semibold text-sm mb-1" style="color:var(--slate-900)">Advanced
-                                        Arthroscopic Techniques</h4>
-                                    <p class="text-sm" style="color:var(--slate-500)">Minimally invasive procedures for
-                                        faster recovery, less pain, and excellent outcomes.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--success-100)"><i data-lucide="heart-handshake"
-                                        class="w-5 h-5" style="color:var(--success-700)"></i></div>
-                                <div>
-                                    <h4 class="font-semibold text-sm mb-1" style="color:var(--slate-900)">Compassionate
-                                        Care</h4>
-                                    <p class="text-sm" style="color:var(--slate-500)">Every patient is treated like
-                                        family — with patience, empathy, and clear communication.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--warning-100)"><i data-lucide="clock" class="w-5 h-5"
-                                        style="color:var(--warning-600)"></i></div>
-                                <div>
-                                    <h4 class="font-semibold text-sm mb-1" style="color:var(--slate-900)">Serving His
-                                        Hometown</h4>
-                                    <p class="text-sm" style="color:var(--slate-500)">After gaining experience at SPS
-                                        Hospital Ludhiana, returned home to serve the people of his community.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reveal reveal-d2">
-                        <div class="relative">
-                            <div class="rounded-3xl p-10 text-center" style="background:var(--primary-900)">
-                                <div class="text-6xl font-extrabold text-white mb-2">8+</div>
-                                <div class="font-semibold mb-6" style="color:var(--primary-300)">Years of Excellence
-                                </div>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1)">
-                                        <div class="text-2xl font-bold text-white">999+</div>
-                                        <div class="text-xs mt-1" style="color:var(--primary-300)">Successful Surgeries
-                                        </div>
-                                    </div>
-                                    <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1)">
-                                        <div class="text-2xl font-bold text-white">98%</div>
-                                        <div class="text-xs mt-1" style="color:var(--primary-300)">Patient Satisfaction
-                                        </div>
-                                    </div>
-                                    <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1)">
-                                        <div class="text-2xl font-bold text-white">3000+</div>
-                                        <div class="text-xs mt-1" style="color:var(--primary-300)">Happy Patients</div>
-                                    </div>
-                                    <div class="rounded-2xl p-5" style="background:rgba(255,255,255,0.1)">
-                                        <div class="text-2xl font-bold text-white">SPS</div>
-                                        <div class="text-xs mt-1" style="color:var(--primary-300)">Hospital Experience
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="absolute -bottom-4 -right-4 w-20 h-20 rounded-2xl -z-10"
-                                style="background:rgba(20,184,166,0.2)"></div>
-                            <div class="absolute -top-4 -left-4 w-16 h-16 rounded-2xl -z-10"
-                                style="background:rgba(59,130,246,0.2)"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Latest Blogs Preview -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 reveal">
-                    <div><span class="sec-label mb-4 inline-block"><span class="w-2 h-2 rounded-full"
-                                style="background:var(--primary-500)"></span> Blog</span>
-                        <h2 class="text-3xl font-bold tracking-tight mt-3" style="color:var(--slate-900)">Latest
-                            Articles</h2>
-                    </div>
-                    <a href="#blog" onclick="nav('blog')"
-                        class="text-sm font-semibold flex items-center gap-1 mt-4 sm:mt-0 transition-all"
-                        style="color:var(--primary-600)" onmouseover="this.style.gap='8px'"
-                        onmouseout="this.style.gap='4px'">View All Articles <i data-lucide="arrow-right"
-                            class="w-4 h-4"></i></a>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8" id="homeBlogGrid"></div>
-            </div>
-        </section>
-
-        <!-- Video Testimonials -->
-        <section class="py-10 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 reveal">
-                    <div><span class="sec-label mb-4 inline-block"><span class="w-2 h-2 rounded-full"
-                                style="background:var(--primary-500)"></span> Video Stories</span>
-                        <h2 class="text-3xl font-bold tracking-tight mt-3" style="color:var(--slate-900)">Patient
-                            Testimonials</h2>
-                    </div>
-                    <!-- <div class="flex gap-2 mt-4 sm:mt-0">
-                        <button onclick="scrollVideos('home',-1)"
-                            class="w-10 h-10 rounded-full border flex items-center justify-center transition-all"
-                            style="border-color:var(--slate-200);color:var(--slate-500)"
-                            onmouseover="this.style.borderColor='var(--primary-300)';this.style.color='var(--primary-600)';this.style.background='var(--primary-50)'"
-                            onmouseout="this.style.borderColor='var(--slate-200)';this.style.color='var(--slate-500)';this.style.background='transparent'"
-                            aria-label="Scroll left">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
-                        <button onclick="scrollVideos('home',1)"
-                            class="w-10 h-10 rounded-full border flex items-center justify-center transition-all"
-                            style="border-color:var(--slate-200);color:var(--slate-500)"
-                            onmouseover="this.style.borderColor='var(--primary-300)';this.style.color='var(--primary-600)';this.style.background='var(--primary-50)'"
-                            onmouseout="this.style.borderColor='var(--slate-200)';this.style.color='var(--slate-500)';this.style.background='transparent'"
-                            aria-label="Scroll right">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                    </div> -->
-                </div>
-                <div id="homeVideoScroller" class="video-scroller reveal reveal-d1">
-
-                    <div class="video-card">
-                        <div class="video-wrapper" onclick="playVideo(this)">
-                            <video src="https://drhakamsingh.com/_assets/video/fb8b156f5019b4b3f8012b82ef85ddd8.mp4"
-                                preload="metadata" playsinline></video>
-                            <div class="video-play-btn"><svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg></div>
-                            <div class="video-card-label">Patient Testimonial 2</div>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-wrapper" onclick="playVideo(this)">
-                            <video src="https://drhakamsingh.com/_assets/video/ec656a108adc2f1f623a2ef666871464.mp4"
-                                preload="metadata" playsinline></video>
-                            <div class="video-play-btn"><svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg></div>
-                            <div class="video-card-label">Patient Testimonial 3</div>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-wrapper" onclick="playVideo(this)">
-                            <video src="https://drhakamsingh.com/_assets/video/e399ae0161b939c64de5bad3fce44240.mp4"
-                                preload="metadata" playsinline></video>
-                            <div class="video-play-btn"><svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg></div>
-                            <div class="video-card-label">Patient Testimonial 4</div>
-                        </div>
-                    </div>
-                    <div class="video-card">
-                        <div class="video-wrapper" onclick="playVideo(this)">
-                            <video src="https://drhakamsingh.com/_assets/video/fcdacf83568f4085420b0d4ce6fb8a19.mp4"
-                                preload="metadata" playsinline></video>
-                            <div class="video-play-btn"><svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg></div>
-                            <div class="video-card-label">Patient Testimonial 1</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- CTA -->
-        <section class="py-20 relative overflow-hidden"
-            style="background:linear-gradient(135deg,var(--primary-700),var(--primary-900))">
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute top-10 left-10 w-40 h-40 border border-white rounded-full"></div>
-                <div class="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full"></div>
-            </div>
-            <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
-                <h2 class="text-3xl lg:text-5xl font-bold text-white tracking-tight mb-6">Ready to Get Back in the
-                    Game?</h2>
-                <p class="text-lg mb-10 max-w-2xl mx-auto" style="color:var(--primary-200)">Schedule a consultation
-                    with Dr. Hakam Singh and take the first step towards pain-free movement and peak performance.</p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#" onclick="openBookingModal();return false;"
-                        class="text-white px-8 py-4 text-sm font-bold rounded-xl transition-all shadow-lg"
-                        style="background:#fff;color:var(--primary-800)"
-                        onmouseover="this.style.background='var(--slate-50)'"
-                        onmouseout="this.style.background='#fff'">Book Appointment</a>
-                    <a href="tel:+918847494362"
-                        class="bg-white/15 hover:bg-white/20 text-white border border-white/25 px-8 py-4 text-sm font-semibold rounded-xl transition-all backdrop-blur-sm flex items-center gap-2"><i
-                            data-lucide="phone" class="w-4 h-4"></i> Call Now</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: ABOUT ==================== -->
-    <div id="page-about" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="hero-blur-orb hero-blur-orb-2"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> About</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">About Dr. Hakam
-                        Singh</h1>
-                    <p class="text-lg text-slate-300">A dedicated orthopaedic surgeon committed to restoring mobility
-                        and improving lives through surgical excellence.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-5 gap-16 items-start">
-                    <div class="lg:col-span-2 reveal">
-                        <div class="doctor-blur-card w-full h-[420px] shadow-xl">
-                            <img src="https://chauhanmedicity.com/wp-content/uploads/2023/01/Dr.-Hakam-Singh-1.jpg"
-                                alt="Dr. Hakam Singh" />
-                            <div class="card-content">
-                                <p class="text-white font-bold text-lg">Dr. Hakam Singh</p>
-                                <p class="text-slate-300 text-sm">MBBS, MS (Orth), Fellowship (Arthroscopy & Sports
-                                    Medicine)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-3 reveal reveal-d2">
-                        <h2 class="text-3xl font-bold tracking-tight mb-6" style="color:var(--slate-900)">Profile &
-                            Credentials</h2>
-                        <p class="leading-relaxed mb-6" style="color:var(--slate-600)">Dr. Hakam Singh is a Consultant
-                            Orthopaedic Surgeon & Sports Injury Specialist with extensive training from some of
-                            India's most respected medical institutions. After completing his MBBS from GMC Amritsar
-                            in 2012, he pursued MS in Orthopedics from DMC Ludhiana (2014-2017), building a strong
-                            foundation in all aspects of orthopedic surgery.</p>
-                        <p class="leading-relaxed mb-6" style="color:var(--slate-600)">Driven by a passion for sports
-                            medicine and minimally invasive surgery, he completed his superspecialisation in
-                            Arthroscopy and Sports Medicine from Ortho One Hospital, Coimbatore in 2021 — one of
-                            India's premier sports medicine centers. This advanced training equipped him with
-                            cutting-edge skills in arthroscopic procedures for the knee, shoulder, ankle, and other
-                            joints.</p>
-                        <p class="leading-relaxed mb-6" style="color:var(--slate-600)">He worked at SPS Hospital,
-                            Ludhiana for one year as an Orthopedics and Sports Medicine Consultant, gaining valuable
-                            experience in managing complex cases across the full spectrum of orthopedics. After
-                            gaining enough experience in all fields, he returned to his hometown to serve the people
-                            here — bringing world-class orthopedic care closer to home.</p>
-                        <p class="leading-relaxed mb-8" style="color:var(--slate-600)">His approach to patient care
-                            combines evidence-based medicine with individualized treatment planning. He believes
-                            every patient deserves a clear explanation of their condition, a thorough discussion of all
-                            treatment options, and a surgeon who genuinely cares about their outcome and return to an
-                            active lifestyle.</p>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="rounded-xl p-5 border"
-                                style="background:var(--slate-50);border-color:var(--slate-100)">
-                                <h4 class="font-semibold text-sm mb-2" style="color:var(--slate-900)">Education</h4>
-                                <ul class="space-y-1.5 text-sm" style="color:var(--slate-600)">
-                                    <li>• MBBS — GMC Amritsar (2012)</li>
-                                    <li>• MS (Orthopedics) — DMC Ludhiana (2014-2017)</li>
-                                    <li>• Fellowship — Arthroscopy & Sports Medicine</li>
-                                    <li>• Ortho One Hospital, Coimbatore (2021)</li>
-                                </ul>
-                            </div>
-                            <div class="rounded-xl p-5 border"
-                                style="background:var(--slate-50);border-color:var(--slate-100)">
-                                <h4 class="font-semibold text-sm mb-2" style="color:var(--slate-900)">Experience</h4>
-                                <ul class="space-y-1.5 text-sm" style="color:var(--slate-600)">
-                                    <li>• Consultant — SPS Hospital, Ludhiana</li>
-                                    <li>• Fellowship — Ortho One, Coimbatore</li>
-                                    <li>• MS Residency — DMC Ludhiana</li>
-                                    <li>• Now serving his hometown community</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Timeline -->
-        <section class="py-20" style="background:var(--slate-50)">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16 reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> Journey</span>
-                    <h2 class="text-3xl font-bold" style="color:var(--slate-900)">Professional Timeline</h2>
-                </div>
-                <div class="max-w-3xl mx-auto space-y-8">
-                    <div class="proc-step reveal">
-                        <div class="proc-dot">
-                            <div class="proc-dot-inner"></div>
-                        </div>
-                        <h4 class="font-bold" style="color:var(--slate-900)">MBBS — GMC Amritsar (2012)</h4>
-                        <p class="text-sm mt-1" style="color:var(--slate-500)">Completed MBBS from Government Medical
-                            College, Amritsar with distinction in surgery and anatomy. Developed a strong interest in
-                            the musculoskeletal system during clinical rotations.</p>
-                    </div>
-                    <div class="proc-step reveal">
-                        <div class="proc-dot">
-                            <div class="proc-dot-inner"></div>
-                        </div>
-                        <h4 class="font-bold" style="color:var(--slate-900)">MS Orthopedics — DMC Ludhiana
-                            (2014-2017)</h4>
-                        <p class="text-sm mt-1" style="color:var(--slate-500)">Three-year rigorous residency at Dayanand
-                            Medical College, Ludhiana gaining comprehensive hands-on experience in trauma management,
-                            joint replacement, spine surgery, and pediatric orthopedics.</p>
-                    </div>
-                    <div class="proc-step reveal">
-                        <div class="proc-dot">
-                            <div class="proc-dot-inner"></div>
-                        </div>
-                        <h4 class="font-bold" style="color:var(--slate-900)">Fellowship — Arthroscopy & Sports Medicine
-                            (2021)</h4>
-                        <p class="text-sm mt-1" style="color:var(--slate-500)">Advanced superspecialisation at Ortho One
-                            Hospital, Coimbatore — one of India's premier sports medicine centers. Intensive training
-                            in arthroscopic ACL reconstruction, meniscus repair, rotator cuff repair, cartilage
-                            restoration, and comprehensive sports injury management.</p>
-                    </div>
-                    <div class="proc-step reveal">
-                        <div class="proc-dot">
-                            <div class="proc-dot-inner"></div>
-                        </div>
-                        <h4 class="font-bold" style="color:var(--slate-900)">Consultant — SPS Hospital, Ludhiana</h4>
-                        <p class="text-sm mt-1" style="color:var(--slate-500)">Worked as Orthopedics and Sports Medicine
-                            Consultant at SPS Hospital, one of Ludhiana's leading multi-specialty hospitals. Managed
-                            complex cases across the full spectrum of orthopedic and sports injuries.</p>
-                    </div>
-                    <div class="proc-step reveal">
-                        <div class="proc-dot">
-                            <div class="proc-dot-inner"></div>
-                        </div>
-                        <h4 class="font-bold" style="color:var(--slate-900)">Return to Hometown — Serving the
-                            Community</h4>
-                        <p class="text-sm mt-1" style="color:var(--slate-500)">After gaining extensive experience across
-                            all fields of orthopedics, Dr. Hakam Singh returned to his hometown to serve the people
-                            here — bringing world-class arthroscopic and sports medicine expertise closer to home.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: SPECIALIZATIONS ==================== -->
-    <div id="page-specializations" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> Services</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Specializations</h1>
-                    <p class="text-lg text-slate-300">Advanced orthopedic care with expertise in arthroscopy, sports
-                        medicine, and joint replacement.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="space-y-16">
-                    <!-- Arthroscopy -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                        <div><span class="text-xs font-bold uppercase tracking-wider"
-                                style="color:var(--accent-600)">01</span>
-                            <h2 class="text-2xl font-bold mt-2 mb-4" style="color:var(--slate-900)">Arthroscopy &
-                                Sports Medicine</h2>
-                            <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Dr. Hakam Singh's primary
-                                area of superspecialisation. Arthroscopic (keyhole) surgery allows diagnosis and
-                                treatment of joint problems through tiny incisions, resulting in less pain, minimal
-                                scarring, and faster recovery. His fellowship at Ortho One Hospital, Coimbatore
-                                provided intensive training in the most advanced arthroscopic techniques.</p>
-                            <p class="leading-relaxed mb-6" style="color:var(--slate-600)">His sports medicine practice
-                                covers the full spectrum of athletic injuries — from weekend warriors to competitive
-                                athletes — with a focus on returning patients to their sport at pre-injury performance
-                                levels through evidence-based rehabilitation protocols.</p>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--accent-500)"></i>ACL Reconstruction (Anatomic Technique)</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--accent-500)"></i>Meniscus Repair & Partial Meniscectomy</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--accent-500)"></i>Rotator Cuff Repair</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--accent-500)"></i>Cartilage Restoration (Microfracture, MACI)
-                                </li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--accent-500)"></i>Shoulder, Ankle & Elbow Arthroscopy</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--accent-500)"></i>Sports Injury Prevention Programs</li>
-                            </ul>
-                        </div>
-                        <div class="rounded-2xl p-10 flex items-center justify-center min-h-[300px]"
-                            style="background:linear-gradient(135deg,var(--accent-50),#ccfbf1)">
-                            <i data-lucide="scan" class="w-24 h-24" style="color:var(--accent-300)"></i>
-                        </div>
-                    </div>
-                    <!-- Joint Replacement -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                        <div class="order-2 lg:order-1 rounded-2xl p-10 flex items-center justify-center min-h-[300px]"
-                            style="background:linear-gradient(135deg,var(--primary-50),#dbeafe)">
-                            <i data-lucide="circle-dot" class="w-24 h-24" style="color:var(--primary-300)"></i>
-                        </div>
-                        <div class="order-1 lg:order-2"><span class="text-xs font-bold uppercase tracking-wider"
-                                style="color:var(--primary-600)">02</span>
-                            <h2 class="text-2xl font-bold mt-2 mb-4" style="color:var(--slate-900)">Joint Replacement
-                                Surgery</h2>
-                            <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Total and partial knee and
-                                hip
-                                replacement surgery using the latest generation of implants and minimally invasive
-                                surgical approaches. Dr. Hakam Singh combines his training in joint replacement from
-                                DMC Ludhiana with modern techniques for optimal outcomes.</p>
-                            <p class="leading-relaxed mb-6" style="color:var(--slate-600)">Patients benefit from
-                                precise surgical technique that reduces tissue damage, minimizes blood loss, and
-                                accelerates rehabilitation. Most knee replacement patients begin walking within 24 hours
-                                of surgery.</p>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--primary-500)"></i>Total Knee Replacement (TKR)</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--primary-500)"></i>Partial Knee Replacement (UKR)</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--primary-500)"></i>Total Hip Replacement (THR)</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--primary-500)"></i>Minimally Invasive Approaches</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Sports Injury -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                        <div><span class="text-xs font-bold uppercase tracking-wider"
-                                style="color:var(--error-500)">03</span>
-                            <h2 class="text-2xl font-bold mt-2 mb-4" style="color:var(--slate-900)">Sports Injury
-                                Management</h2>
-                            <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Sports injuries require
-                                specialized understanding of biomechanics, tissue healing, and performance demands. Dr.
-                                Hakam Singh provides comprehensive care from acute injury management through
-                                rehabilitation and return-to-play decision making.</p>
-                            <p class="leading-relaxed mb-6" style="color:var(--slate-600)">He works closely with
-                                physiotherapists and sports trainers to ensure coordinated recovery that addresses not
-                                just the injury but the athlete's overall performance goals.</p>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--error-500)"></i>Ligament Injuries (ACL, PCL, MCL)</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--error-500)"></i>Tendon Injuries & Tendinopathy</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--error-500)"></i>Stress Fractures & Overuse Injuries</li>
-                                <li class="flex items-center gap-2 text-sm" style="color:var(--slate-600)"><i
-                                        data-lucide="check-circle-2" class="w-4 h-4"
-                                        style="color:var(--error-500)"></i>Return-to-Sport Rehabilitation</li>
-                            </ul>
-                        </div>
-                        <div class="rounded-2xl p-10 flex items-center justify-center min-h-[300px]"
-                            style="background:linear-gradient(135deg,var(--error-50),#fee2e2)">
-                            <i data-lucide="activity" class="w-24 h-24" style="color:var(--error-500);opacity:0.4"></i>
-                        </div>
-                    </div>
-                    <!-- Trauma -->
-                    <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
-                        <div class="order-2 lg:order-1 rounded-2xl p-10 flex items-center justify-center min-h-[300px]"
-                            style="background:linear-gradient(135deg,#f3e8ff,#faf5ff)">
-                            <i data-lucide="bone" class="w-24 h-24" style="color:#7c3aed;opacity:0.4"></i>
-                        </div>
-                        <div class="order-1 lg:order-2"><span class="text-xs font-bold uppercase tracking-wider"
-                                style="color:#7c3aed">04</span>
-                            <h2 class="text-2xl font-bold mt-2 mb-4" style="color:var(--slate-900)">Trauma & Fracture
-                                Care</h2>
-                            <p class="leading-relaxed mb-4" style="color:var(--slate-600)">From simple fractures to
-                                complex polytrauma, expert fracture management using the latest fixation techniques
-                                including locking plates, intramedullary nails, and external fixation systems.</p>
-                            <p class="leading-relaxed mb-6" style="color:var(--slate-600)">Experience includes
-                                management
-                                of peri-articular fractures, pelvic fractures, open fractures, and nonunion/malunion
-                                corrections gained during residency at DMC Ludhiana and at SPS Hospital.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: CONDITIONS ==================== -->
-    <div id="page-conditions" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> Conditions</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Conditions Treated
-                    </h1>
-                    <p class="text-lg text-slate-300">Expert diagnosis and treatment for a wide range of
-                        musculoskeletal conditions.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="med-card p-7 reveal reveal-d1">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">ACL Tear</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Anterior Cruciate
-                            Ligament
-                            injury — one of Dr. Hakam Singh's most commonly treated conditions. Causes knee
-                            instability during pivoting activities. Treated with anatomic arthroscopic ACL
-                            reconstruction using hamstring autograft.</p><a href="#procedures"
-                            onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d1">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Meniscus Tear</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Tear of the knee's
-                            shock-absorbing cartilage. Can occur from sports or degenerative changes. Treatment
-                            depends on tear pattern — repair for vascular zones, partial meniscectomy for degenerative
-                            tears.</p><a href="#procedures" onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d2">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Rotator Cuff Tear</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Tear of shoulder tendons
-                            causing pain, weakness, and limited range of motion. Common in overhead athletes and older
-                            adults. Arthroscopic repair provides excellent outcomes with proper rehabilitation.</p><a
-                            href="#procedures" onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d2">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Osteoarthritis</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Degenerative joint
-                            disease
-                            causing cartilage loss, pain, stiffness, and reduced mobility. Treatment ranges from
-                            lifestyle modification and physiotherapy to joint replacement surgery for advanced
-                            cases.</p><a href="#procedures" onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d3">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Patellofemoral Pain</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">"Runner's knee" — the
-                            most
-                            common cause of knee pain in young adults. Pain in the front of the knee aggravated by
-                            stairs, squatting, and sitting. Usually managed with targeted physiotherapy.</p><a
-                            href="#contact" onclick="nav('contact')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">Consult Doctor →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d3">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Fractures &
-                            Dislocations</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">All types of fractures
-                            including simple, comminuted, intra-articular, and open fractures. Treated with casting,
-                            internal fixation (plates, nails, screws), or external fixation.</p><a href="#procedures"
-                            onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d1">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Disc Herniation</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Spinal disc bulge causing
-                            nerve compression, back pain, and sciatica. Most cases improve with conservative
-                            treatment. Surgical microdiscectomy for persistent neurological deficits.</p><a
-                            href="#procedures" onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d2">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Cartilage Injuries</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Damage to articular
-                            cartilage from trauma or degeneration. Treatment options include arthroscopic
-                            chondroplasty, microfracture, and cartilage restoration procedures for young
-                            patients.</p><a href="#procedures" onclick="nav('procedures')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">View Treatments →</a>
-                    </div>
-                    <div class="med-card p-7 reveal reveal-d3">
-                        <h3 class="text-lg font-bold mb-3" style="color:var(--slate-900)">Tendinopathies</h3>
-                        <p class="text-sm leading-relaxed mb-3" style="color:var(--slate-500)">Tendon disorders
-                            including
-                            Achilles tendinopathy, patellar tendinopathy ("jumper's knee"), and rotator cuff
-                            tendinopathy. Managed with structured rehabilitation, injection therapy, and occasionally
-                            surgery.</p><a href="#contact" onclick="nav('contact')" class="text-sm font-semibold"
-                            style="color:var(--primary-600)">Consult Doctor →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: PROCEDURES ==================== -->
-    <div id="page-procedures" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> Procedures</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Surgical Procedures
-                    </h1>
-                    <p class="text-lg text-slate-300">Detailed information about the surgical interventions offered by
-                        Dr. Hakam Singh.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="space-y-12">
-                    <div class="rounded-2xl p-8 lg:p-10 border reveal"
-                        style="background:var(--slate-50);border-color:var(--slate-100)">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
-                                style="background:var(--accent-600)"><i data-lucide="scan"
-                                    class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold" style="color:var(--slate-900)">ACL Reconstruction</h3>
-                        </div>
-                        <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Arthroscopic reconstruction of
-                            the
-                            torn ACL using hamstring autograft. Dr. Hakam Singh follows an anatomic reconstruction
-                            technique — placing the graft at the exact footprint of the native ACL for optimal
-                            stability and knee kinematics. Performed through small incisions with camera guidance.
-                            Day-care or 1-day hospital stay.</p>
-                        <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Duration</p>
-                                <p style="color:var(--slate-500)">1 — 1.5 hours</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Hospital Stay</p>
-                                <p style="color:var(--slate-500)">Same day / 1 day</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Return to Sport</p>
-                                <p style="color:var(--slate-500)">6 — 9 months</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl p-8 lg:p-10 border reveal"
-                        style="background:var(--slate-50);border-color:var(--slate-100)">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
-                                style="background:var(--accent-600)"><i data-lucide="scan"
-                                    class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold" style="color:var(--slate-900)">Meniscus Repair / Meniscectomy
-                            </h3>
-                        </div>
-                        <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Arthroscopic meniscus repair for
-                            tears in the vascular zone (preserving the meniscus for long-term joint health) or partial
-                            meniscectomy for tears in non-repairable zones. Dr. Hakam Singh prioritizes meniscus
-                            preservation whenever possible, as loss of meniscal tissue accelerates arthritis.</p>
-                        <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Duration</p>
-                                <p style="color:var(--slate-500)">45 min — 1.5 hours</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Hospital Stay</p>
-                                <p style="color:var(--slate-500)">Same day</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Recovery</p>
-                                <p style="color:var(--slate-500)">2 weeks — 4 months</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl p-8 lg:p-10 border reveal"
-                        style="background:var(--slate-50);border-color:var(--slate-100)">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
-                                style="background:var(--accent-600)"><i data-lucide="scan"
-                                    class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold" style="color:var(--slate-900)">Rotator Cuff Repair</h3>
-                        </div>
-                        <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Arthroscopic repair of torn
-                            rotator cuff tendons using suture anchors. The torn tendon is reattached to its footprint
-                            on the humerus with secure fixation. Sling immobilization for 4-6 weeks followed by
-                            structured rehabilitation. Full recovery takes 6-12 months.</p>
-                        <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Duration</p>
-                                <p style="color:var(--slate-500)">1 — 2 hours</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Hospital Stay</p>
-                                <p style="color:var(--slate-500)">Same day / 1 day</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Full Recovery</p>
-                                <p style="color:var(--slate-500)">6 — 12 months</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl p-8 lg:p-10 border reveal"
-                        style="background:var(--slate-50);border-color:var(--slate-100)">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
-                                style="background:var(--primary-600)"><i data-lucide="circle-dot"
-                                    class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold" style="color:var(--slate-900)">Total Knee Replacement (TKR)
-                            </h3>
-                        </div>
-                        <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Damaged knee joint surfaces are
-                            replaced with metal and plastic implants. Modern surgical approaches minimize tissue damage,
-                            reduce blood loss, and accelerate rehabilitation. Most patients begin walking within 24
-                            hours.</p>
-                        <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Duration</p>
-                                <p style="color:var(--slate-500)">1.5 — 2 hours</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Hospital Stay</p>
-                                <p style="color:var(--slate-500)">3 — 5 days</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Recovery</p>
-                                <p style="color:var(--slate-500)">6 — 12 weeks</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl p-8 lg:p-10 border reveal"
-                        style="background:var(--slate-50);border-color:var(--slate-100)">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
-                                style="background:var(--primary-600)"><i data-lucide="circle"
-                                    class="w-5 h-5 text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-bold" style="color:var(--slate-900)">Total Hip Replacement (THR)
-                            </h3>
-                        </div>
-                        <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Femoral head and acetabulum are
-                            replaced with prosthetic components. Both cemented and uncemented techniques available based
-                            on patient age, bone quality, and activity level.</p>
-                        <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Duration</p>
-                                <p style="color:var(--slate-500)">1.5 — 2.5 hours</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Hospital Stay</p>
-                                <p style="color:var(--slate-500)">4 — 7 days</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Recovery</p>
-                                <p style="color:var(--slate-500)">8 — 12 weeks</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl p-8 lg:p-10 border reveal"
-                        style="background:var(--slate-50);border-color:var(--slate-100)">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center"
-                                style="background:#7c3aed"><i data-lucide="bone" class="w-5 h-5 text-white"></i></div>
-                            <h3 class="text-xl font-bold" style="color:var(--slate-900)">Fracture Fixation (ORIF)</h3>
-                        </div>
-                        <p class="leading-relaxed mb-4" style="color:var(--slate-600)">Open Reduction and Internal
-                            Fixation — surgically realigning fractured bones and securing them with plates, screws, or
-                            intramedullary nails using biologically respectful techniques that promote faster bone
-                            healing.</p>
-                        <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Duration</p>
-                                <p style="color:var(--slate-500)">Varies by fracture</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Hospital Stay</p>
-                                <p style="color:var(--slate-500)">1 — 7 days</p>
-                            </div>
-                            <div class="bg-white rounded-xl p-4 border" style="border-color:var(--slate-100)">
-                                <p class="font-semibold mb-1" style="color:var(--slate-900)">Healing</p>
-                                <p style="color:var(--slate-500)">6 — 12 weeks</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: BLOG ==================== -->
-    <div id="page-blog" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="hero-blur-orb hero-blur-orb-2"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> Blog</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Health Library</h1>
-                    <p class="text-lg text-slate-300">Evidence-based articles on orthopedic conditions, treatments, and
-                        recovery — written by Dr. Hakam Singh.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blogFullGrid"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: BLOG DETAIL ==================== -->
-    <div id="page-blogdetail" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal">
-                    <a href="#blog" onclick="nav('blog')"
-                        class="flex items-center gap-1 mb-6 text-sm font-medium transition-colors"
-                        style="color:var(--primary-300)" onmouseover="this.style.color='#fff'"
-                        onmouseout="this.style.color='var(--primary-300)'"><i data-lucide="arrow-left"
-                            class="w-4 h-4"></i> Back to Blog</a>
-                    <span class="sec-label mb-6 inline-block" id="blogDetailCat"><span class="w-2 h-2 rounded-full"
-                            style="background:var(--primary-500)"></span> Article</span>
-                    <h1 class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4" id="blogDetailTitle">
-                        Blog Title</h1>
-                    <p class="text-slate-300 text-sm" id="blogDetailMeta">By Dr. Hakam Singh • Date • Read Time</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-16 bg-white">
-            <div class="max-w-3xl mx-auto px-6">
-                <div class="prose max-w-none" id="blogDetailBody"></div>
-                <div class="mt-12 pt-8" style="border-top:1px solid var(--slate-200)">
-                    <h3 class="font-bold mb-4" style="color:var(--slate-900)">Related Articles</h3>
-                    <div class="grid sm:grid-cols-2 gap-4" id="blogRelated"></div>
-                </div>
-                <div class="mt-12 rounded-2xl p-8 text-center border"
-                    style="background:var(--primary-50);border-color:var(--primary-100)">
-                    <h3 class="text-xl font-bold mb-2" style="color:var(--slate-900)">Have Questions?</h3>
-                    <p class="text-sm mb-4" style="color:var(--slate-500)">Consult Dr. Hakam Singh for personalized
-                        medical advice.</p>
-                    <a href="#" onclick="openBookingModal();return false;"
-                        class="inline-flex items-center gap-2 text-white px-6 py-3 text-sm font-semibold rounded-xl transition-all"
-                        style="background:var(--primary-600)" onmouseover="this.style.background='var(--primary-700)'"
-                        onmouseout="this.style.background='var(--primary-600)'">Book Consultation <i
-                            data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: TESTIMONIALS ==================== -->
-    <div id="page-testimonials" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span>
-                        Testimonials</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Patient Stories</h1>
-                    <p class="text-lg text-slate-300">Real experiences from patients who regained their mobility under
-                        Dr.
-                        Hakam Singh's care.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="testimonialsGrid"></div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: FAQ ==================== -->
-    <div id="page-faq" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> FAQ</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Patient Resources
-                    </h1>
-                    <p class="text-lg text-slate-300">Answers to common questions about orthopedic conditions and
-                        treatments.</p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-3xl mx-auto px-6">
-                <h2 class="text-2xl font-bold mb-8 reveal" style="color:var(--slate-900)">Frequently Asked Questions
-                </h2>
-                <div class="space-y-3" id="faqContainer">
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">When should I see an orthopedic doctor?</span><i
-                                data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">You should consult an
-                                orthopedic specialist if you experience persistent joint pain lasting more than a few
-                                weeks, difficulty in walking or using your limbs, joint swelling or stiffness, numbness
-                                or tingling in arms or legs, sports injuries, or any deformity. Early consultation
-                                often leads to better outcomes and more treatment options.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">What is arthroscopic surgery?</span><i data-lucide="plus"
-                                class="w-5 h-5 faq-icon flex-shrink-0" style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">Arthroscopy is a
-                                minimally invasive surgical technique where the surgeon operates through small keyhole
-                                incisions using a tiny camera (arthroscope) and specialized instruments. Benefits
-                                include less pain, minimal scarring, shorter hospital stay, and faster recovery compared
-                                to open surgery. Dr. Hakam Singh is fellowship-trained in arthroscopy from Ortho One,
-                                Coimbatore.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">How long does recovery take after ACL
-                                reconstruction?</span><i data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">ACL recovery is a
-                                9-12
-                                month process. Crutches for 2-4 weeks, progressive rehabilitation through phases,
-                                jogging at 3 months, agility drills at 4-5 months, and return to sport at 8-9 months.
-                                Dr. Hakam Singh uses objective criteria (strength testing, hop tests) — not just time —
-                                to determine return-to-sport readiness.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">Can I return to sports after ACL reconstruction?</span><i
-                                data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">Yes, the goal of ACL
-                                reconstruction is to restore knee stability for return to sport. Most athletes return
-                                to pivoting sports between 6-9 months after surgery, provided they complete
-                                rehabilitation and pass functional testing. Returning before 9 months doubles the
-                                re-injury risk.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">Is joint replacement surgery safe?</span><i
-                                data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">Yes, joint
-                                replacement
-                                is one of the most successful surgical procedures in modern medicine. Success rates
-                                exceed 95%. Complications are rare and most are treatable. Modern techniques minimize
-                                tissue damage and blood loss for faster recovery.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">Do I need surgery for back pain?</span><i
-                                data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">Most back pain
-                                (80-90%)
-                                improves with conservative treatment within 6-12 weeks. Surgery is considered only for
-                                persistent nerve compression causing leg pain, weakness, or numbness, or for structural
-                                problems like severe spinal stenosis. Dr. Hakam Singh always recommends the most
-                                conservative appropriate treatment first.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">What should I bring to my first consultation?</span><i
-                                data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">Please bring any
-                                X-rays, MRI/CT reports and discs, previous medical records, a list of current
-                                medications, your insurance details, and a brief written summary of your symptoms
-                                including when they started, what makes them better or worse, and any previous
-                                treatments tried.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item border rounded-xl overflow-hidden reveal"
-                        style="border-color:var(--slate-200)">
-                        <button onclick="toggleFaq(this)"
-                            class="w-full flex items-center justify-between p-5 text-left transition-colors"
-                            onmouseover="this.style.background='var(--slate-50)'"
-                            onmouseout="this.style.background='transparent'"><span class="font-semibold text-sm pr-4"
-                                style="color:var(--slate-900)">How can I prevent sports injuries?</span><i
-                                data-lucide="plus" class="w-5 h-5 faq-icon flex-shrink-0"
-                                style="color:var(--slate-400)"></i></button>
-                        <div class="faq-answer px-5 pb-0">
-                            <p class="text-sm leading-relaxed pb-5" style="color:var(--slate-600)">Key prevention
-                                strategies include: structured neuromuscular warm-up programs (FIFA 11+) which reduce
-                                ACL injuries by 50-70%, regular strength training 2-3 times per week, proper load
-                                management (gradual increase in training), adequate sleep and nutrition, appropriate
-                                footwear and protective equipment, and listening to your body for warning signs of
-                                injury.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-16 rounded-2xl p-8 text-center border reveal"
-                    style="background:var(--primary-50);border-color:var(--primary-100)">
-                    <h3 class="text-xl font-bold mb-2" style="color:var(--slate-900)">Still Have Questions?</h3>
-                    <p class="text-sm mb-4" style="color:var(--slate-500)">Every patient's situation is unique. Schedule
-                        a consultation for personalized answers.</p><a href="#"
-                        onclick="openBookingModal();return false;"
-                        class="inline-flex items-center gap-2 text-white px-6 py-3 text-sm font-semibold rounded-xl transition-all"
-                        style="background:var(--primary-600)" onmouseover="this.style.background='var(--primary-700)'"
-                        onmouseout="this.style.background='var(--primary-600)'">Ask Dr. Hakam Singh <i
-                            data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== PAGE: CONTACT ==================== -->
-    <div id="page-contact" class="page-section">
-        <section class="hero-med relative pt-32 pb-20 overflow-hidden">
-            <div class="hero-blur-orb hero-blur-orb-1"></div>
-            <div class="hero-blur-orb hero-blur-orb-2"></div>
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="max-w-3xl reveal"><span class="sec-label mb-6 inline-block"><span
-                            class="w-2 h-2 rounded-full" style="background:var(--primary-500)"></span> Contact</span>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Book an Appointment
-                    </h1>
-                    <p class="text-lg text-slate-300">Take the first step towards pain-free movement. Reach out today.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-5 gap-12">
-                    <div class="lg:col-span-2 reveal">
-                        <h2 class="text-2xl font-bold mb-6" style="color:var(--slate-900)">Contact Information</h2>
-                        <div class="space-y-6 mb-10">
-                            <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--primary-100)"><i data-lucide="map-pin" class="w-5 h-5"
-                                        style="color:var(--primary-600)"></i></div>
-                                <div>
-                                    <p class="text-xs font-semibold uppercase tracking-wider mb-1"
-                                        style="color:var(--slate-400)">Clinic Address</p>
-                                    <p class="text-sm" style="color:var(--slate-700)">[Clinic Name]<br />[Full
-                                        Address]<br />City, State, PIN</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--primary-100)"><i data-lucide="phone" class="w-5 h-5"
-                                        style="color:var(--primary-600)"></i></div>
-                                <div>
-                                    <p class="text-xs font-semibold uppercase tracking-wider mb-1"
-                                        style="color:var(--slate-400)">Phone</p>
-                                    <p class="text-sm" style="color:var(--slate-700)">+91 88474 94362</p>
-                                    <p class="text-xs" style="color:var(--slate-400)">Mon–Sat, 9 AM – 7 PM</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--primary-100)"><i data-lucide="mail" class="w-5 h-5"
-                                        style="color:var(--primary-600)"></i></div>
-                                <div>
-                                    <p class="text-xs font-semibold uppercase tracking-wider mb-1"
-                                        style="color:var(--slate-400)">Email</p>
-                                    <p class="text-sm" style="color:var(--slate-700)">hakamsingh9@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--primary-100)"><i data-lucide="clock" class="w-5 h-5"
-                                        style="color:var(--primary-600)"></i></div>
-                                <div>
-                                    <p class="text-xs font-semibold uppercase tracking-wider mb-1"
-                                        style="color:var(--slate-400)">OPD Hours</p>
-                                    <p class="text-sm" style="color:var(--slate-700)">Monday – Saturday: 10 AM – 2
-                                        PM<br />Evening: 5 PM – 7 PM<br />Sunday: By Appointment Only</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                                    style="background:var(--primary-100)"><i data-lucide="globe" class="w-5 h-5"
-                                        style="color:var(--primary-600)"></i></div>
-                                <div>
-                                    <p class="text-xs font-semibold uppercase tracking-wider mb-1"
-                                        style="color:var(--slate-400)">Online</p>
-                                    <a href="https://drhakamsingh.com/" target="_blank" class="text-sm font-medium"
-                                        style="color:var(--primary-600)">drhakamsingh.com</a><br>
-                                    <a href="https://www.youtube.com/@drhakamsinghortho" target="_blank"
-                                        class="text-sm font-medium" style="color:var(--primary-600)">YouTube
-                                        Channel</a><br>
-                                    <a href="https://www.instagram.com/drhakamsingh/?hl=en" target="_blank"
-                                        class="text-sm font-medium" style="color:var(--primary-600)">Instagram</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rounded-xl overflow-hidden border h-56 flex items-center justify-center"
-                            style="border-color:var(--slate-200);background:var(--slate-100)">
-                            <div class="text-center"><i data-lucide="map" class="w-10 h-10 mx-auto mb-2"
-                                    style="color:var(--slate-300)"></i>
-                                <p class="text-sm" style="color:var(--slate-400)">Google Maps</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-3 reveal reveal-d2">
-                        <div class="rounded-2xl p-8 border text-center mb-6"
-                            style="background:linear-gradient(135deg,var(--primary-50),var(--accent-50));border-color:var(--primary-100)">
-                            <i data-lucide="calendar-check" class="w-10 h-10 mx-auto mb-3"
-                                style="color:var(--primary-600)"></i>
-                            <h3 class="text-lg font-bold mb-2" style="color:var(--slate-900)">Quick Appointment Book via
-                                WhatsApp
-                            </h3>
-                            <p class="text-sm mb-4" style="color:var(--slate-500)">Fill the premium booking form and
-                                send your details directly to WhatsApp for faster response.</p>
-                            <a href="#" onclick="openBookingModal();return false;"
-                                class="inline-flex items-center gap-2 text-white px-6 py-3 text-sm font-semibold rounded-xl transition-all"
-                                style="background:var(--primary-600)"
-                                onmouseover="this.style.background='var(--primary-700)'"
-                                onmouseout="this.style.background='var(--primary-600)'"><i data-lucide="message-circle"
-                                    class="w-4 h-4"></i> Open Appointment Booking Form</a>
-                        </div>
-                        <h2 class="text-2xl font-bold mb-6" style="color:var(--slate-900)">Or Fill This Form</h2>
-                        <form id="contactForm" class="space-y-5" onsubmit="handleContactForm(event)">
-                            <div class="grid sm:grid-cols-2 gap-5">
-                                <div><label class="block text-sm font-medium mb-1.5" style="color:var(--slate-700)">Full
-                                        Name *</label><input type="text" required
-                                        class="w-full px-4 py-3 rounded-xl border text-sm transition-all"
-                                        style="border-color:var(--slate-200)"
-                                        onfocus="this.style.borderColor='var(--primary-500)';this.style.boxShadow='0 0 0 4px rgba(37,99,235,0.08)'"
-                                        onblur="this.style.borderColor='var(--slate-200)';this.style.boxShadow='none'"
-                                        placeholder="Your full name" /></div>
-                                <div><label class="block text-sm font-medium mb-1.5"
-                                        style="color:var(--slate-700)">Phone Number *</label><input type="tel" required
-                                        class="w-full px-4 py-3 rounded-xl border text-sm transition-all"
-                                        style="border-color:var(--slate-200)"
-                                        onfocus="this.style.borderColor='var(--primary-500)';this.style.boxShadow='0 0 0 4px rgba(37,99,235,0.08)'"
-                                        onblur="this.style.borderColor='var(--slate-200)';this.style.boxShadow='none'"
-                                        placeholder="+91 XXXXX XXXXX" /></div>
-                            </div>
-                            <div class="grid sm:grid-cols-2 gap-5">
-                                <div><label class="block text-sm font-medium mb-1.5"
-                                        style="color:var(--slate-700)">Email</label><input type="email"
-                                        class="w-full px-4 py-3 rounded-xl border text-sm transition-all"
-                                        style="border-color:var(--slate-200)"
-                                        onfocus="this.style.borderColor='var(--primary-500)';this.style.boxShadow='0 0 0 4px rgba(37,99,235,0.08)'"
-                                        onblur="this.style.borderColor='var(--slate-200)';this.style.boxShadow='none'"
-                                        placeholder="your@email.com" /></div>
-                                <div><label class="block text-sm font-medium mb-1.5"
-                                        style="color:var(--slate-700)">Preferred Date</label><input type="date"
-                                        class="w-full px-4 py-3 rounded-xl border text-sm transition-all"
-                                        style="border-color:var(--slate-200)"
-                                        onfocus="this.style.borderColor='var(--primary-500)';this.style.boxShadow='0 0 0 4px rgba(37,99,235,0.08)'"
-                                        onblur="this.style.borderColor='var(--slate-200)';this.style.boxShadow='none'" />
-                                </div>
-                            </div>
-                            <div><label class="block text-sm font-medium mb-1.5" style="color:var(--slate-700)">Concern
-                                    / Condition *</label><select required
-                                    class="w-full px-4 py-3 rounded-xl border text-sm transition-all"
-                                    style="border-color:var(--slate-200);color:var(--slate-600)"
-                                    onfocus="this.style.borderColor='var(--primary-500)';this.style.boxShadow='0 0 0 4px rgba(37,99,235,0.08)'"
-                                    onblur="this.style.borderColor='var(--slate-200)';this.style.boxShadow='none'">
-                                    <option value="">Select your concern</option>
-                                    <option>Knee Pain / Arthritis</option>
-                                    <option>ACL / Ligament Injury</option>
-                                    <option>Meniscus Injury</option>
-                                    <option>Shoulder Pain / Rotator Cuff</option>
-                                    <option>Back Pain / Sciatica</option>
-                                    <option>Sports Injury</option>
-                                    <option>Fracture</option>
-                                    <option>Joint Replacement Consultation</option>
-                                    <option>Other</option>
-                                </select></div>
-                            <div><label class="block text-sm font-medium mb-1.5" style="color:var(--slate-700)">Describe
-                                    Your Problem *</label><textarea required rows="4"
-                                    class="w-full px-4 py-3 rounded-xl border text-sm transition-all resize-none"
-                                    style="border-color:var(--slate-200)"
-                                    onfocus="this.style.borderColor='var(--primary-500)';this.style.boxShadow='0 0 0 4px rgba(37,99,235,0.08)'"
-                                    onblur="this.style.borderColor='var(--slate-200)';this.style.boxShadow='none'"
-                                    placeholder="Please describe your symptoms, duration, and any treatments tried..."></textarea>
-                            </div>
-                            <button type="submit"
-                                class="text-white px-8 py-3.5 text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2"
-                                style="background:var(--primary-600)"
-                                onmouseover="this.style.background='var(--primary-700)';this.style.boxShadow='0 8px 24px rgba(37,99,235,0.2)'"
-                                onmouseout="this.style.background='var(--primary-600)';this.style.boxShadow='none'">Send
-                                via WhatsApp <i data-lucide="send" class="w-4 h-4"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer style="background:var(--slate-950);color:#fff">
-        <div class="max-w-7xl mx-auto px-6 py-16">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-11 h-11 rounded-xl flex items-center justify-center"
-                            style="background:var(--primary-600)"><i data-lucide="bone" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <div><span class="text-base font-bold tracking-tight">Dr. Hakam Singh</span><span
-                                class="block text-[10px] font-medium tracking-widest uppercase"
-                                style="color:var(--slate-400)">Orthopaedic & Sports Injury
-                                Specialist</span></div>
-                    </div>
-                    <p class="text-sm leading-relaxed mb-6" style="color:var(--slate-400)">Dedicated to restoring
-                        mobility
-                        and improving quality of life through advanced arthroscopic surgery, sports medicine expertise,
-                        and compassionate patient care.</p>
-                    <div class="flex gap-3">
-                        <a href="https://www.facebook.com/profile.php?id=100095310664237" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
-                            style="background:rgba(255,255,255,0.1)"
-                            onmouseover="this.style.background='#1877F2';this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(0)'"
-                            aria-label="Facebook">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/drhakamsingh/?hl=en" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
-                            style="background:rgba(255,255,255,0.1)"
-                            onmouseover="this.style.background='linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)';this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(0)'"
-                            aria-label="Instagram">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/dr-hakam-singh-orthopaedic" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
-                            style="background:rgba(255,255,255,0.1)"
-                            onmouseover="this.style.background='#0A66C2';this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(0)'"
-                            aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/@drhakamsinghortho" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
-                            style="background:rgba(255,255,255,0.1)"
-                            onmouseover="this.style.background='#FF0000';this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(0)'"
-                            aria-label="YouTube">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                        </a>
-                        <!-- <a href="https://drhakamsingh.com/" target="_blank" rel="noopener"
-                            class="w-10 h-10 rounded-lg flex items-center justify-center transition-all"
-                            style="background:rgba(255,255,255,0.1)"
-                            onmouseover="this.style.background='var(--primary-600)';this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(0)'"
-                            aria-label="Website">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z">
-                                </path>
-                            </svg>
-                        </a> -->
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-6" style="color:var(--slate-300)">Quick
-                        Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" onclick="nav('home')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Home</a></li>
-                        <li><a href="#about" onclick="nav('about')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">About Dr. Hakam Singh</a></li>
-                        <li><a href="#specializations" onclick="nav('specializations')"
-                                class="text-sm transition-colors" style="color:var(--slate-400)"
-                                onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Specializations</a></li>
-                        <li><a href="#conditions" onclick="nav('conditions')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Conditions Treated</a></li>
-                        <li><a href="#procedures" onclick="nav('procedures')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Procedures</a></li>
-                        <li><a href="#blog" onclick="nav('blog')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-6" style="color:var(--slate-300)">
-                        Resources</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#testimonials" onclick="nav('testimonials')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Patient Testimonials</a></li>
-                        <li><a href="#faq" onclick="nav('faq')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">FAQ</a></li>
-                        <li><a href="#contact" onclick="nav('contact')" class="text-sm transition-colors"
-                                style="color:var(--slate-400)" onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">Book Appointment</a></li>
-                        <li><a href="https://www.youtube.com/@drhakamsinghortho" target="_blank"
-                                class="text-sm transition-colors" style="color:var(--slate-400)"
-                                onmouseover="this.style.color='#fff'"
-                                onmouseout="this.style.color='var(--slate-400)'">YouTube Videos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-6" style="color:var(--slate-300)">
-                        Contact</h4>
-                    <div class="space-y-4">
-                        <div class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"
-                                style="color:var(--primary-400)"></i>
-                            <div>
-                                <p class="text-sm" style="color:var(--slate-300)">Chauhan Medicity Hospital & <br> Ajit
-                                    Clinic</p>
-                                <p class="text-xs" style="color:var(--slate-500)"><b>Chauhan Medicity Hospital</b>,Kotli
-                                    Mughlan, National highway 54, Punjab, 145025.<br> <br> <b>Ajit Clinic</b>, Opposite
-                                    Kapoor Medical
-                                    store, Hanuman
-                                    Chowk, Gurdaspur.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 mt-0.5 flex-shrink-0"
-                                style="color:var(--primary-400)"></i>
-                            <p class="text-sm" style="color:var(--slate-300)">+91 88474 94362</p>
-                        </div>
-                        <div class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 mt-0.5 flex-shrink-0"
-                                style="color:var(--primary-400)"></i>
-                            <p class="text-sm" style="color:var(--slate-300)">hakamsingh9@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 p-4 rounded-xl border"
-                        style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1)">
-                        <p class="text-xs" style="color:var(--slate-400)"><strong style="color:var(--slate-300)">OPD
-                                Timings:</strong><br />Mon–Sat: 10AM–2PM,
-                            5PM–7PM<br />Sun: By Appointment</p>
-                    </div>
-                </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-export">Cancel</button>
+                <button id="btn-do-export" class="modal-btn-primary">
+                    <i class="fas fa-download"></i> Export Now
+                </button>
             </div>
         </div>
-        <div style="border-top:1px solid rgba(255,255,255,0.1)">
-            <div class="max-w-7xl mx-auto px-6 py-6">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-xs text-center md:text-left" style="color:var(--slate-500)">© <span
-                            id="footYear"></span>
-                        Dr. Hakam Singh. All rights reserved. For informational purposes only — not a substitute for
-                        professional medical advice.</p>
-                    <div class="flex gap-4 text-xs" style="color:var(--slate-500)"><a href="#faq" onclick="nav('faq')"
-                            class="transition-colors" onmouseover="this.style.color='#fff'"
-                            onmouseout="this.style.color='var(--slate-500)'">FAQ</a><a href="#blog"
-                            onclick="nav('blog')" class="transition-colors" onmouseover="this.style.color='#fff'"
-                            onmouseout="this.style.color='var(--slate-500)'">Blog</a><a href="#contact"
-                            onclick="nav('contact')" class="transition-colors" onmouseover="this.style.color='#fff'"
-                            onmouseout="this.style.color='var(--slate-500)'">Contact</a></div>
+    </div>
+
+    <!-- Saved Lists Modal -->
+    <div id="modal-saved" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="saved-modal-title">
+        <div class="modal modal-large">
+            <div class="modal-header">
+                <h2 id="saved-modal-title" class="modal-title font-display"><i class="fas fa-folder-open"></i> Saved
+                    Lists</h2>
+                <button class="modal-close" data-modal="modal-saved" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="saved-lists-container" class="saved-lists-container">
+                    <!-- Populated by JS -->
+                </div>
+                <div id="no-saved-lists" class="empty-state-sm hidden">
+                    <i class="fas fa-inbox"></i>
+                    <p>No saved lists yet. Click Save to create your first list.</p>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-saved">Close</button>
+            </div>
         </div>
-    </footer>
+    </div>
 
-    <!-- ==================== TOAST ==================== -->
-    <div id="toast" class="toast"></div>
+    <!-- Save As Modal -->
+    <div id="modal-save-as" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="save-as-modal-title">
+        <div class="modal modal-small">
+            <div class="modal-header">
+                <h2 id="save-as-modal-title" class="modal-title font-display"><i class="fas fa-save"></i> Save List</h2>
+                <button class="modal-close" data-modal="modal-save-as" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="save-list-name" class="form-label">List Name</label>
+                    <input type="text" id="save-list-name" class="form-input" placeholder="e.g., Weekly Groceries"
+                        maxlength="60">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-save-as">Cancel</button>
+                <button id="btn-do-save" class="modal-btn-primary">
+                    <i class="fas fa-save"></i> Save List
+                </button>
+            </div>
+        </div>
+    </div>
 
-    <!-- ==================== BACK TO TOP ==================== -->
-    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="back-to-top-btn">
-        <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    <!-- Add Custom Item Modal -->
+    <div id="modal-custom" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="custom-modal-title">
+        <div class="modal modal-small">
+            <div class="modal-header">
+                <h2 id="custom-modal-title" class="modal-title font-display"><i class="fas fa-plus-circle"></i> Add
+                    Custom Item</h2>
+                <button class="modal-close" data-modal="modal-custom" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="custom-item-name" class="form-label">Item Name</label>
+                    <input type="text" id="custom-item-name" class="form-input" placeholder="e.g., Organic Almond Milk"
+                        maxlength="80">
+                </div>
+                <div class="form-group">
+                    <label for="custom-item-category" class="form-label">Category</label>
+                    <select id="custom-item-category" class="form-select">
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custom-item-amount" class="form-label">Default Amount</label>
+                        <input type="number" id="custom-item-amount" class="form-input" placeholder="500" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="custom-item-unit" class="form-label">Default Unit</label>
+                        <select id="custom-item-unit" class="form-select">
+                            <option value="kg">kg</option>
+                            <option value="gm">gm</option>
+                            <option value="litre">litre</option>
+                            <option value="ml">ml</option>
+                            <option value="pc">pc</option>
+                            <option value="pcs">pcs</option>
+                            <option value="pkt">packet</option>
+                            <option value="bottle">bottle</option>
+                            <option value="jar">jar</option>
+                            <option value="can">can</option>
+                            <option value="tube">tube</option>
+                            <option value="bunch">bunch</option>
+                            <option value="dozen">dozen</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="custom-item-priority" class="form-label">Priority</label>
+                    <select id="custom-item-priority" class="form-select">
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-custom">Cancel</button>
+                <button id="btn-do-add-custom" class="modal-btn-primary">
+                    <i class="fas fa-plus"></i> Add Item
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates Modal -->
+    <div id="modal-templates" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="templates-modal-title">
+        <div class="modal modal-large">
+            <div class="modal-header">
+                <h2 id="templates-modal-title" class="modal-title font-display"><i class="fas fa-magic"></i> List
+                    Templates</h2>
+                <button class="modal-close" data-modal="modal-templates" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Choose a template to quickly populate your list with common items.</p>
+                <div id="templates-container" class="templates-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-templates">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Modal -->
+    <div id="modal-stats" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="stats-modal-title">
+        <div class="modal modal-large">
+            <div class="modal-header">
+                <h2 id="stats-modal-title" class="modal-title font-display"><i class="fas fa-chart-bar"></i> List
+                    Statistics</h2>
+                <button class="modal-close" data-modal="modal-stats" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="stats-container" class="stats-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-stats">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="modal-settings" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="settings-modal-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="settings-modal-title" class="modal-title font-display"><i class="fas fa-cog"></i> Settings</h2>
+                <button class="modal-close" data-modal="modal-settings" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-grid">
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Theme</h4>
+                            <p>Switch between light and dark mode</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-theme">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Auto-Save</h4>
+                            <p>Automatically save every 30 seconds</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-autosave" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Show Priority Column</h4>
+                            <p>Display priority indicators in the list</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-show-priority" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Show Notes Column</h4>
+                            <p>Display notes input in the list</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-show-notes" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Show Starred Column</h4>
+                            <p>Display star/favorite toggle in the list</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-show-starred" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Compact View</h4>
+                            <p>Reduce spacing for more items on screen</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="setting-compact">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-info">
+                            <h4>Font Size</h4>
+                            <p>Adjust the base font size</p>
+                        </div>
+                        <select id="setting-fontsize" class="filter-select">
+                            <option value="small">Small</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="settings-danger-zone">
+                    <h4>Danger Zone</h4>
+                    <button id="btn-clear-all-data" class="danger-btn">
+                        <i class="fas fa-trash-alt"></i> Clear All Saved Data
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-settings">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="modal-shortcuts" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="shortcuts-modal-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="shortcuts-modal-title" class="modal-title font-display"><i class="fas fa-keyboard"></i> Keyboard
+                    Shortcuts</h2>
+                <button class="modal-close" data-modal="modal-shortcuts" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="shortcuts-list">
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>S</kbd><span>Save list</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>E</kbd><span>Export list</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Z</kbd><span>Undo</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>Y</kbd><span>Redo</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>F</kbd><span>Focus search</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>N</kbd><span>New list</span></div>
+                    <div class="shortcut-item"><kbd>Escape</kbd><span>Close modal / Exit shopping mode</span></div>
+                    <div class="shortcut-item"><kbd>/</kbd><span>Quick search</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>A</kbd><span>Select all visible items</span></div>
+                    <div class="shortcut-item"><kbd>Ctrl</kbd> + <kbd>D</kbd><span>Deselect all</span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-shortcuts">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Delete Modal -->
+    <div id="modal-confirm" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="confirm-modal-title">
+        <div class="modal modal-small">
+            <div class="modal-header">
+                <h2 id="confirm-modal-title" class="modal-title font-display"><i
+                        class="fas fa-exclamation-triangle"></i> Confirm Action</h2>
+                <button class="modal-close" data-modal="modal-confirm" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p id="confirm-message" class="confirm-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-confirm">Cancel</button>
+                <button id="btn-confirm-action" class="danger-btn">
+                    <i class="fas fa-check"></i> Confirm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Inline Modal -->
+    <div id="modal-notes" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="notes-modal-title">
+        <div class="modal modal-small">
+            <div class="modal-header">
+                <h2 id="notes-modal-title" class="modal-title font-display"><i class="fas fa-sticky-note"></i> Item
+                    Notes</h2>
+                <button class="modal-close" data-modal="modal-notes" aria-label="Close"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p id="notes-item-name" class="notes-item-name"></p>
+                <textarea id="notes-textarea" class="form-textarea" placeholder="Add notes for this item..." rows="4"
+                    maxlength="200"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-secondary" data-modal="modal-notes">Cancel</button>
+                <button id="btn-save-notes" class="modal-btn-primary">
+                    <i class="fas fa-save"></i> Save Notes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Support Button -->
+    <div class="floating-support" id="floating-support">
+        <div class="social-menu" id="social-menu">
+            <a href="https://facebook.com/grocerylistpro" target="_blank" rel="noopener noreferrer"
+                class="social-icon facebook" title="Facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/grocerylistpro" target="_blank" rel="noopener noreferrer"
+                class="social-icon twitter" title="Twitter / X" aria-label="Twitter">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://instagram.com/grocerylistpro" target="_blank" rel="noopener noreferrer"
+                class="social-icon instagram" title="Instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/message" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp"
+                title="WhatsApp" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://youtube.com/@grocerylistpro" target="_blank" rel="noopener noreferrer"
+                class="social-icon youtube" title="YouTube" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://linkedin.com/company/grocerylistpro" target="_blank" rel="noopener noreferrer"
+                class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <button class="support-btn" id="support-btn" aria-label="Support and social links">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" class="scroll-top hidden" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- ==================== FLOATING BUTTONS ==================== -->
-    <div class="floating-whatsapp">
-        <!-- Booking Button (above WhatsApp) -->
-        <button onclick="openBookingModal()" class="booking-float-btn" aria-label="Book Appointment">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-                <path d="M8 14h.01"></path>
-                <path d="M12 14h.01"></path>
-                <path d="M16 14h.01"></path>
-                <path d="M8 18h.01"></path>
-                <path d="M12 18h.01"></path>
-                <path d="M16 18h.01"></path>
-            </svg>
-        </button>
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
-        <!-- WhatsApp Button -->
-        <button onclick="openWhatsApp()" class="whatsapp-btn" aria-label="Chat on WhatsApp">
-            <span class="whatsapp-tooltip">Chat with us</span>
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-        </button>
-    </div>
+    <!-- Print Section (Hidden, used for PDF generation) -->
+    <div id="print-section" class="print-section"></div>
 
-    <!-- ==================== PREMIUM BOOKING MODAL ==================== -->
-    <div id="bookingModal" class="modal-overlay">
-        <div class="booking-modal">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <button onclick="closeBookingModal()" class="modal-close-btn" aria-label="Close">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-xl flex items-center justify-center"
-                        style="background:rgba(255,255,255,0.15)">
-                        <i data-lucide="calendar-check" class="w-6 h-6 text-white"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-bold text-white">Book Appointment</h2>
-                        <p class="text-sm" style="color:rgba(255,255,255,0.7)">Fill the form below — details will be
-                            sent via WhatsApp</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal Body -->
-            <div class="modal-body">
-                <form id="premiumForm" onsubmit="event.preventDefault();submitPremiumForm();">
-
-                    <!-- Patient Information -->
-                    <div class="form-section-title">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                        Patient Information
-                    </div>
-
-                    <div class="premium-form-row">
-                        <div class="premium-form-group">
-                            <label class="premium-form-label">Full Name <span class="required">*</span></label>
-                            <input type="text" id="pFullName" class="premium-form-input"
-                                placeholder="Enter your full name" />
-                            <p class="premium-form-error-msg"></p>
-                        </div>
-                        <div class="premium-form-group">
-                            <label class="premium-form-label">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="pPhone" class="premium-form-input" placeholder="+91 XXXXX XXXXX" />
-                            <p class="premium-form-error-msg"></p>
-                        </div>
-                    </div>
-
-                    <div class="premium-form-row">
-                        <div class="premium-form-group">
-                            <label class="premium-form-label">Email</label>
-                            <input type="email" id="pEmail" class="premium-form-input" placeholder="your@email.com" />
-                            <p class="premium-form-error-msg"></p>
-                        </div>
-                        <div class="premium-form-group">
-                            <label class="premium-form-label">Age <span class="required">*</span></label>
-                            <input type="number" id="pAge" class="premium-form-input" placeholder="Enter your age"
-                                min="0" max="120" />
-                            <p class="premium-form-error-msg"></p>
-                        </div>
-                    </div>
-
-                    <div class="premium-form-group">
-                        <label class="premium-form-label">Gender <span class="required">*</span></label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" name="pGender" id="pGenderM" value="Male" />
-                                <label for="pGenderM">Male</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="pGender" id="pGenderF" value="Female" />
-                                <label for="pGenderF">Female</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="pGender" id="pGenderO" value="Other" />
-                                <label for="pGenderO">Other</label>
-                            </div>
-                        </div>
-                        <p class="premium-form-error-msg"></p>
-                    </div>
-
-                    <div class="form-divider"><span>Appointment Details</span></div>
-
-                    <!-- Appointment Details -->
-                    <div class="form-section-title">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Appointment Details
-                    </div>
-
-                    <div class="premium-form-row">
-                        <div class="premium-form-group">
-                            <label class="premium-form-label">Preferred Date <span class="required">*</span></label>
-                            <input type="date" id="pDate" class="premium-form-input" />
-                            <p class="premium-form-error-msg"></p>
-                        </div>
-                        <div class="premium-form-group">
-                            <label class="premium-form-label">Preferred Time <span class="required">*</span></label>
-                            <select id="pTime" class="premium-form-select">
-                                <option value="">Select time slot</option>
-                                <option>10:00 AM - 11:00 AM</option>
-                                <option>11:00 AM - 12:00 PM</option>
-                                <option>12:00 PM - 1:00 PM</option>
-                                <option>1:00 PM - 2:00 PM</option>
-                                <option>5:00 PM - 6:00 PM</option>
-                                <option>6:00 PM - 7:00 PM</option>
-                            </select>
-                            <p class="premium-form-error-msg"></p>
-                        </div>
-                    </div>
-
-                    <div class="premium-form-group">
-                        <label class="premium-form-label">Consultation Type <span class="required">*</span></label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" name="pConsultType" id="pConsultOPD" value="OPD Visit" />
-                                <label for="pConsultOPD">OPD Visit</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="pConsultType" id="pConsultOnline"
-                                    value="Online / Teleconsult" />
-                                <label for="pConsultOnline">Online</label>
-                            </div>
-                        </div>
-                        <p class="premium-form-error-msg"></p>
-                    </div>
-
-                    <div class="premium-form-group">
-                        <label class="premium-form-label">Concern / Condition <span class="required">*</span></label>
-                        <select id="pConcern" class="premium-form-select">
-                            <option value="">Select your concern</option>
-                            <option>Knee Pain / Arthritis</option>
-                            <option>ACL / Ligament Injury</option>
-                            <option>Meniscus Injury</option>
-                            <option>Shoulder Pain / Rotator Cuff</option>
-                            <option>Back Pain / Sciatica</option>
-                            <option>Sports Injury</option>
-                            <option>Fracture</option>
-                            <option>Joint Replacement Consultation</option>
-                            <option>Post-Surgery Follow-up</option>
-                            <option>Second Opinion</option>
-                            <option>Other</option>
-                        </select>
-                        <p class="premium-form-error-msg"></p>
-                    </div>
-
-                    <div class="form-divider"><span>Medical Details</span></div>
-
-                    <!-- Medical Details -->
-                    <div class="form-section-title">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                        Medical Details
-                    </div>
-
-                    <div class="premium-form-group">
-                        <label class="premium-form-label">Describe Your Problem <span class="required">*</span></label>
-                        <textarea id="pDescription" class="premium-form-textarea" rows="4"
-                            placeholder="Please describe your symptoms, when they started, what makes them better or worse, and any treatments you have tried so far..."></textarea>
-                        <p class="premium-form-error-msg"></p>
-                    </div>
-
-                    <div class="premium-form-group">
-                        <label class="premium-form-label">Previous Surgery?</label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" name="pPrevSurgery" id="pPrevSurgNo" value="No" checked
-                                    onchange="void(0)" />
-                                <label for="pPrevSurgNo">No</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="pPrevSurgery" id="pPrevSurgYes" value="Yes"
-                                    onchange="void(0)" />
-                                <label for="pPrevSurgYes">Yes</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="premium-form-group">
-                        <label class="premium-form-label">Currently Taking Any Medicines?</label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" name="pMedicines" id="pMedsNo" value="No" checked
-                                    onchange="toggleMedicineDetails(this)" />
-                                <label for="pMedsNo">No</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" name="pMedicines" id="pMedsYes" value="Yes"
-                                    onchange="toggleMedicineDetails(this)" />
-                                <label for="pMedsYes">Yes</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="premium-form-group" id="medicineDetailsGroup" style="display:none">
-                        <label class="premium-form-label">Medicine Details</label>
-                        <input type="text" id="pMedicineDetails" class="premium-form-input"
-                            placeholder="List your current medications..." />
-                    </div>
-
-                    <!-- File Upload section
-                     <div class="premium-form-group">
-                        <label class="premium-form-label">Upload Reports (Optional)</label>
-                        <div class="upload-zone" id="uploadZone">
-                            <input type="file" id="pFileUpload" accept=".pdf,.jpg,.jpeg,.png"
-                                onchange="handleFileUpload(this)" />
-                            <div class="upload-zone-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                    <polyline points="17 8 12 3 7 8"></polyline>
-                                    <line x1="12" y1="3" x2="12" y2="15"></line>
-                                </svg>
-                            </div>
-                            <p class="upload-zone-text">Click to upload X-rays, MRI, or other reports</p>
-                            <p class="upload-zone-subtext">PDF, JPG, PNG up to 10MB</p>
-                            <div class="upload-zone-filename"></div>
-                        </div>
-                        <p class="premium-form-hint">Note: File will not be sent via WhatsApp. Please share it
-                            separately
-                            after connecting.</p>
-                    </div> -->
-
-                    <div class="premium-group">
-                        <label class="checkbox-group">
-                            <input type="checkbox" id="pTerms" />
-                            <span class="checkbox-group-text">I agree that the information provided is accurate and I
-                                consent to sharing these details via WhatsApp for appointment booking purposes. I
-                                understand this is a request and does not guarantee an appointment.</span>
-                        </label>
-                        <p class="premium-form-error-msg"></p>
-                    </div>
-
-                    <button type="submit" id="premiumSubmitBtn" class="premium-submit-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-                            </path>
-                        </svg>
-                        Send Appointment Request via WhatsApp
-                    </button>
-
-                    <p class="text-center mt-4" style="font-size:11px;color:var(--slate-400)">
-                        Your details will open in WhatsApp with a pre-formatted message. Just hit send!
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== JAVASCRIPT ==================== -->
     <script src="script.js"></script>
 </body>
 
